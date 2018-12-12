@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>EXERCICIS ARRAYS</h1>
+    <script>
+        // <!-- Crea una pàgina arrays.html. Afegeix un script on hi hagi un array de 10 posicions. Assigna valors de diferent tipus a aquestes posicions. -->
+        var valors = new Array(10);
+        // Assigna un valor a la posició 15.
+        valors[15] = 15;
+        // Recorre l'array utilitzant l'index.
+        document.write("<h2>Exercici 3</h2>");
+        for (var index = 0; index < valors.length; index++) {
+            document.write(valors[index] + "<br>");
+        }
+        // Recorre l'array utilitzant el for(var v in valors)
+        document.write("<h2>Exercici 4</h2>");
+        for (var index in valors) {
+            document.write(valors[index] + "<br>");
+        }
+        // Crea un array amb tres paraules i un altre amb dues. Concatena-los.
+        // Amb l'array resultant crea una frase.
+        document.write("<h2>Exercici 5 i 6</h2>");
+        var paraules = new Array("Lorem ", " ipsum ", " dolor");
+        var paraules2 = new Array(" sit ", " amet " + "<br>");
+        var frase = paraules.join("");
+        var frase2 = paraules2.join("");
+        document.write(frase.concat(frase2));
+        // Inverteix l'array i monta una frase.
+        var girades = paraules.reverse();
+        var girades2 = paraules2.reverse();
+        document.write("<h2>Exercici 7</h2>");
+        document.write(girades.concat(girades2) + "<br>");
+        // Implementa una pila utilitzant els mètodes que proporciona l'array. 
+        // És a dir, crea un array buit, utilitza push per afegir elements i pop per recuperar-los.
+        // Comprova que realment és una estructura LIFO.
+        var pila = [];
+        pila.push(5);
+        pila.push(10);
+        pila.push(25);
+        document.write("<h2>Exercici 8</h2>");
+        document.write(pila.pop() + "<br>");
+        // Crea un array de valors numèrics. Ordena-los utilitzant el mètode sort.
+        document.write("<h2>Exercici 9</h2>");
+        var nums = [5, 6, 95, 79, 14, 4, 3, 2, 81];
+        nums.sort();
+        for (var recorr in nums) {
+            document.write(nums[recorr] + ",");
+        }
+        // (Opcional) Crea un arxiu javascript amb funcions que tornin el màxim, el mínim i la mitja 
+        // d'un array de sencers. Crea un html amb un formulari amb un camp de text on l'usuari podrà 
+        // posar una nota, i dos botons. El primer botó afegirà la nota a un array. El segon botó mostrarà
+        // totes les notes dins un div i mostrarà la nota màxima, la mínima i la mitjana de les notes de
+        // l'array.
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vocals amb un if per a cada</title>
+</head>
+<body>
+	<h1>Vocals amb un if per a cada una</h1>
+	<script type="text/javascript">
+		for ( var index = 65; index <= 90; index++) {
+			var lletra = String.fromCharCode(index);
+			document.write("<p>" + lletra);
+			if (lletra === 'A') {
+				document.write(" Vocal");
+			} else if (lletra === 'E') {
+				document.write(" Vocal");
+			} else if (lletra === 'I') {
+				document.write(" Vocal");
+			} else if (lletra === 'O') {
+				document.write(" Vocal");
+			} else if (lletra === 'U') {
+				document.write(" Vocal");
+			} else {
+				document.write(" Consonant");
+			}
+			document.write("</p>");
+		}
+	</script>
+	<p>
+		<a href="index.html">Tornar</a>
+	</p>
+</body>
+</html>

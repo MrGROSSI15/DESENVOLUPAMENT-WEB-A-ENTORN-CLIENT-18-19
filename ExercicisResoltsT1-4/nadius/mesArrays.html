@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Arrays</title>
+        <script type="text/javascript" src="./js/funcionsArrays.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                //Exercici 12
+                var array12 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+                var copia = copiaArray(array12);
+                document.getElementById("Exercici12").innerHTML = "<p>Original: " + JSON.stringify(array12) + "</p>";
+                document.getElementById("Exercici12").innerHTML += "<p>Còpia: " + JSON.stringify(copia) + "</p>";
+
+                //Exercici 13;
+                var array13=[1,2,5,1,2,2,5,1,1,2,2];
+                document.getElementById("Exercici13").innerHTML = "<p>Original: " + JSON.stringify(array13) + "</p>";
+                document.getElementById("Exercici13").innerHTML += "<p>Moda: " + moda(array13) + "</p>";
+
+                //Exercici 14
+                var cadena = "Això era i no era";
+                document.getElementById("Exercici14").innerHTML = "<p>Original: " + cadena + "</p>";
+                document.getElementById("Exercici14").innerHTML += "<p>camelCase: " + camelCase(cadena) + "</p>";
+                
+                //Exercici 15;
+                var array15=[1,2,5,1,2,2,5,1,1,2];
+                document.getElementById("Exercici15").innerHTML = "<p>Original: " + JSON.stringify(array15) + "</p>";
+                document.getElementById("Exercici15").innerHTML += "<p>Còpia: " + JSON.stringify(eliminaDuplicats(array15)) + "</p>";
+                
+
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Més arrays</h1>
+        <h2>Recorregut utilitzant l'index</h2>
+
+        <div id="Exercici"></div>
+
+        <h2>Còpia</h2>
+        <div id="Exercici12"></div>
+
+
+        <h2>Moda</h2>
+        <div id="Exercici13"></div>
+
+        <h2>camelCase</h2>
+        <div id="Exercici14"></div>
+
+        <h2>Elimina duplicats</h2>
+        <div id="Exercici15"></div>
+
+       
+    </body>
+</html>

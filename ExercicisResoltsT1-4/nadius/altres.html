@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Altres</title>
+
+</head>
+<body>
+	<h1>Altres</h1>
+	<h2>Codificar / decodificar URL</h2>
+	<script type="text/javascript">
+		var uri = 'http://www.iespaucasesnoves.cat?nom="Jo mateix"';
+		document.write("<p>URL a codificar: " + uri + "</p>");
+		document.write("<p>Amb encodeURI: " + encodeURI(uri) + "</p>");
+		document
+				.write("<p>Decodificada: " + decodeURI(encodeURI(uri)) + "</p>");
+		document.write("<p>Amb encodeURIComponent: " + encodeURIComponent(uri)
+				+ "</p>");
+		document.write("<p>Decodificada: "
+				+ decodeURIComponent(encodeURIComponent(uri)) + "</p>");
+	</script>
+	<h2>Utilitzar eval</h2>
+	<script type="text/javascript">
+		var guio = 'document.write("<p>Paràgraf generat a partir d\'eval</p>")';
+		eval(guio);
+	</script>
+	<h2>Generar numeros al·leatòris</h2>
+	<script type="text/javascript">
+		if (Math.random() < 0.5) {
+			document.write("<p>Cara</p>");
+		} else {
+			document.write("<p>Creu</p>");
+		}
+	</script>
+	<h2>Generar una funció</h2>
+	<script type="text/javascript">
+		var funcio = new Function("a", "b", "return a+b;");
+		document.write("<p>" + funcio(2, 3) + "</p>");
+	</script>
+</body>
+</html>

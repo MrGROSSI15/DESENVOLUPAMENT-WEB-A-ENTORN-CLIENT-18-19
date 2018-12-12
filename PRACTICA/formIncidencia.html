@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Incidència</title>
+    <link rel="stylesheet" type="text/css" href="css/incidencia.css">
+    <script src="js/incidencia.js"></script>
+    <script src="js/formIncidencia.js"></script>
+</head>
+<body>
+<h1>Incidència</h1>
+<form id="fIncidencia" action="repGet.html" method="post">
+    <p><label for="lloc">Lloc:</label><input type="text" name="lloc" id="lloc"></p>
+    <p><label for="prioritat">Prioritat:</label><input type="number" name="prioritat" id="prioritat" min="1" max="10">
+    </p>
+    <p><label for="descripcio">Descripció:</label><textarea name="descripcio" id="descripcio" rows="5"></textarea></p>
+    <p>
+        <button type="button" id="bEnviar">Registrar la incidència</button>
+        <button type="button" id="bTancar">Tancar la incidència</button>
+        <button type="reset" id="bNetejar">Netejar</button>
+    </p>
+</form>
+<div id="mostrador"></div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Mostruari</title>
+    <script src="confirmar.js"></script>
+    <script src="esdeveniments.js"></script>
+</head>
+
+<body>
+    <h1>Mostruari</h1>
+    <form action="repGet.html" method="get" id="formulari">
+        <fieldset>
+            <legend>Dades Personals</legend>
+            <fieldset>
+                <legend>Dades Bàsiques</legend>
+                <p><label for="nom">Nom:</label><input type="text" name="nom" id="nom" required></input></p>
+                <p><label for="llinatges">Llinatges:<input type="text" name="llinatges" id="llinatges" required></input></p>
+                <p><label for="telf">Telf:<input type="tel" name="telf" id="telf"></input></p>
+            </fieldset>
+            <fieldset>
+                <legend>Altres Dades</legend>
+                <p><label for="telf">Telf:<input type="tel" name="telf1" id="telf1"></input></p>
+                <p><label for="mail">Mail:<input type="text" name="mail" id="mail"></input></p>
+                <p><label for="naix">Naix:<input type="date" name="naix" id="naix"></input></p>
+                <p><label for="masculi">Sexe:<input type="radio" name="masc" id="masc" value="masculi">Masculí</input>
+                        <input type="radio" name="fem" id="fem" value="femeni">Femení</input>
+                        <input type="radio" name="altres" id="altres" value="altres">Altres</input></p>
+                <!-- <p><label for="Moto">CheckBox</label> <input type="checkbox" name="Moto" value="Moto" id="Moto" /> Tenc una
+                                    moto
+                                    <input type="checkbox" name="Cotxe" value="Cotxe" id="Cotxe" /> Tenc un cotxe </p> -->
+                <p>
+                    <label>Select ciutat amb illa: </label>
+                    <select name="pobles" id="pobles">
+                        <optgroup label="Mallorca">
+                            <option value="Arta">Inca</option>
+                            <option value="Andratx">Palma</option>
+                        </optgroup>
+                        <optgroup label="Menorca">
+                            <option value="Ciutadella">Ciutadella</option>
+                            <option value="Mao">Maó</option>
+                        </optgroup>
+                        <optgroup label="Eivissa">
+                            <option value="Josep">Sant Josep</option>
+                            <option value="Joan">Sant Joan</option>
+                        </optgroup>
+                        <optgroup label="Formentera">
+                            <option value="Josep">Sant Francesc</option>
+                            <option value="Calo">Es Caló</option>
+                        </optgroup>
+                    </select>
+                    <p>
+                        <label>Select ILLA: </label> <select name="illa" id="illa">
+                            <option value="mallorca">Mallorca</option>
+                            <option value="menorca">Menorca</option>
+                            <option value="eivissa">Eivissa</option>
+                            <option value="formentera">Formentera</option>
+                        </select>
+                    </p>
+                    <p><label for="nom">Carrer:</label><input type="text" name="carrer" id="carrer"></input></p>
+                    <p><label for="nom">CP:</label><input type="text" name="cp" id="cp" maxlength="5" pattern="[0-9]{6}"></input></p>
+                </p>
+                <p><textarea name="textArea" id="textArea" rows="2" cols="20">Això era i no era, ...</textarea></p>
+                <div id="mostra">
+                    DIV:
+                    </div>
+            </fieldset>
+        </fieldset>
+        <p>
+            <input type="submit" id="envia" value="Validar"></input>
+            <!-- <input type="reset" name="reset" id="reset" value="Reset"></input>
+            <input type="button" name="boto" id="boto" value="Botó normal"></input> -->
+        </p>
+
+    </form>
+
+</body>
+
+</html>

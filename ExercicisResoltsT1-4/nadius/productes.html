@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Productes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.onload = function () {
+                document.getElementById("bQuantitat").onclick = function () {
+                    var q = parseInt(document.getElementById("quantitat").value);
+                    if (!isNaN(q)) {
+                        document.getElementById("quantitat").readOnly = true;
+                        document.getElementById("bQuantitat").disabled = true;
+                        for (var i = 0; i < q; i++) {
+                            document.getElementById("llista").innerHTML += '<p><label for="prod' + i + '">Preu del producte ' + (i + 1) + ': </label><input type="number" id="preu' + i + '" name="preu' + i + '"/></p>';
+                        }
+                        document.getElementById("bCalcular").onclick = function () {
+                            var suma = 0;
+                            for (var i = 0; i < q; i++) {
+                                var valor = parseInt(document.getElementById("preu" + i).value);
+                                suma += (isNaN(valor) ? 0 : valor);
+                            }
+                            document.getElementById("total").innerHTML = suma;
+                        };
+                    }
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Productes</h1>
+        <form>
+            <p><label for="quantitat">Quantitat de productes: </label><input type="number" id="quantitat" name="quantitat"/></p>
+            <p><button type="button" id="bQuantitat">Continua</button></p>
+        </form>
+        <form>
+            <div id="llista"></div>
+            <p><button type="button" id="bCalcular">Calcular</button></p>
+            <p id="total"></p>
+
+        </form>   
+    </body>
+</html>

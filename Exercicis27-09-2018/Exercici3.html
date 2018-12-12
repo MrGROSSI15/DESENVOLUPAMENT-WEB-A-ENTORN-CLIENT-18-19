@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Donats tres números, a, b i c ordenar-los de forma que al final a<=b<=c.</title> </head> <body>
+            <h1>Donats tres números, a, b i c ordenar-los de forma que al final a<=b<=c.</h1> <script type="text/javascript">
+                var num1 = prompt("Escriu sencer A: ");
+                var num2 = prompt("Escriu sencer B: ");
+                var num3 = prompt("Escriu sencer C: ");
+                var temp;
+
+                if ((num1 >= num2) && (num1 >= num3)) {
+                    if (num2 > num3) {
+                        temp = num1;
+                        num1 = num2;
+                        num2 = temp;
+                    } else {
+                        temp = num1;
+                        num1 = num2;
+                        num2 = num3;
+                        num3 = temp;
+                    }
+                }
+                if ((num2 >= num1) && (num2 >= num3)) {
+                    if (num1 > num3) {
+                        temp = num2;
+                        num2 = num1;
+                        num1 = num3;
+                        num3 = temp;
+                    } else {
+                        temp = num2;
+                        num2 = num3;
+                        num3 = temp;
+                    }
+                }
+                if (num1 >= num2) {
+                    temp = num1;
+                    num1 = num2;
+                    num2 = temp;
+                }
+                document.write("<p>L'ordenació seria : " + num1 + " - " + num2 + " - " + num3 + " .<p>");
+            </script>
+                            <p><a href="index.html">Torna a l'Index</a></p>
+                            </body>
+
+</html>

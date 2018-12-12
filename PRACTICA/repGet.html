@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Dades rebudes del formulari</title>
+<style type="text/css">
+.titol {
+	font-weight: bold;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		var cerca = location.search;
+		var capa = document.getElementById("mostrador");
+		if (cerca.length > 0) {
+			//elimina el ?
+			cerca = cerca.substring(1, cerca.length);
+			//dins params tenim un array on cada posició és de la forma parametre=valor
+			var params = cerca.split("&");
+			for ( var index = 0; index < params.length; index++) {
+				//alert(params[index]);
+				var parts = params[index].split("=");
+
+				mostrador.innerHTML = mostrador.innerHTML
+						+ '<p><span class="titol">' + parts[0] + ":</span> "
+						+ parts[1] + "</p>";
+			}
+		}
+
+		document.getElementById("boto").onclick = function() {
+			history.back();
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Dades rebudes del formulari</h1>
+	<div id="mostrador"></div>
+	<p>
+		<button type="button" id="boto">Tornar</button>
+	</p>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="funcions.js" type="text/javascript"></script>
+</head>
+<!-- Crea un html amb un formulari amb un camp de text on l'usuari podrà 
+// posar una nota, i dos botons. El primer botó afegirà la nota a un array. El segon botó mostrarà
+// totes les notes dins un div i mostrarà la nota màxima, la mínima i la mitjana de les notes de
+// l'array. -->
+
+<body>
+    <h1>Calcular notes</h1>
+    <form>
+        <h3>Selecciona la nota:</h3>
+        <select id="notes" name="notes">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select><br>
+
+        <br><button type="button" onclick="afegir()">Afegeix</button>
+
+        <br><button id="mostrar" type="button">Mostra Notes</button>
+        <!-- <button id="clonaArray" type="button">Mostra Notes</button> -->
+    </form>
+    <div id="notes">
+        <p id="notesAfegides"> Notes:</p>
+    </div>
+    <div>
+        <p id="maxim">Maxim: </p>
+        <p id="minim">Minim: </p>
+        <p id="mitjana">Mitjana: </p>
+        
+    </div>
+    <br><button id="cloned" type="button">Mostra Array Clonat</button>
+    <div>
+        <p id="clonaArray">Array Clonat: </p>
+    </div>
+    
+
+    <script>
+        // (Opcional) Crea un arxiu javascript amb funcions que tornin el màxim, el mínim i la mitja 
+        // // d'un array de sencers. Crea un html amb un formulari amb un camp de text on l'usuari podrà 
+        // // posar una nota, i dos botons. El primer botó afegirà la nota a un array. El segon botó mostrarà
+        // // totes les notes dins un div i mostrarà la nota màxima, la mínima i la mitjana de les notes de
+        // // l'array.
+        
+        document.getElementById("mostrar").onclick = function () {
+            var notaMax = maxim();
+            document.getElementById("maxim").innerHTML += notaMax;
+            var notaMin = minim();
+            document.getElementById("minim").innerHTML += notaMin;
+            var mitjana = mitja();
+            document.getElementById("mitjana").innerHTML += mitjana;
+            
+        }
+        document.getElementById("cloned").onclick = function(){
+            var arrayClon = clonaArray(notes);
+            document.getElementById("clonaArray").innerHTML += arrayClon;
+        }
+        // (Opcional) Al fitxer javascript de l'exercici 10 crea una funció que rebi com a paràmetre un array 
+        // i torni una còpia d'aquest array.
+        // document.getElementById("").onclick = function (){
+        //     var arrayClon = clonaArray();
+        //     document.getElementById("").innerHTML += arrayClon;
+
+        // }
+        
+    </script>
+
+    
+
+
+</body>
+
+</html>

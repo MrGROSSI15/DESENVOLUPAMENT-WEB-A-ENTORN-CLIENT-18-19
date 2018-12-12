@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Escriu una pàgina HTML, taulaMultiplicar.html, que mostri la taula de multiplicar d'un número en forma de
+        taula. Utilitzau la funció de l'exercici anterior per a demanar el número a l'usuari.</title>
+</head>
+
+<body>
+    <h1>Taula Multiplicar</h1>
+    <script>
+        var num = prompt("Digues un numero: ");
+        document.write("<table border='0'>");
+        for (var i = 1; i <= 10; i++) {
+            document.write("<tr>");
+            multi = num * i;
+            //document.write("<td>" + num + "x" + i + "=" + multi + "</td>");
+            document.write("<td>" + num + "x" + "</td>");
+            document.write("<td>" + i + "=" + "</td>");
+            document.write("<td>" + num*i + "</td>");
+
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+    </script>
+    <p><a href="index.html">Torna a l'Index</a></p>
+</body>
+
+</html>

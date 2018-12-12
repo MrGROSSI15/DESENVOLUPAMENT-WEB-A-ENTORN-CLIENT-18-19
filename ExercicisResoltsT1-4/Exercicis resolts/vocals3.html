@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vocals amb un sol if</title>
+</head>
+<body>
+	<h1>Vocals amb un sol if</h1>
+	<script type="text/javascript">
+		for ( var index = 65; index <= 90; index++) {
+			var lletra = String.fromCharCode(index);
+			document.write("<p>" + lletra);
+			if (lletra === 'A' || lletra === 'E' || lletra === 'I'
+					|| lletra === 'O' || lletra === 'U') {
+				document.write(" Vocal");
+			} else {
+				document.write(" Consonant");
+			}
+			document.write("</p>");
+		}
+	</script>
+	<p>
+		<a href="index.html">Tornar</a>
+	</p>
+</body>
+</html>

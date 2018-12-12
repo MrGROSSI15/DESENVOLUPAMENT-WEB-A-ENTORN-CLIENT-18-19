@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Proves galetes</title>
+        <script type="text/javascript" src="js/utilitats.js"></script>
+        <script type="text/javascript" src="js/galetes.js"></script>
+        <script type="text/javascript">
+
+
+            function valida() {
+                if (validarObligatori(document.getElementById("usuari").value)
+                        && validarObligatori(document.getElementById("contrasenya").value)) {
+                    setCookie("nomUsuari", document.getElementById("usuari").value, 4);
+                    return true;
+                }
+                return false;
+            }
+
+            window.onload = function () {
+                //Prepara pàgina
+                document.getElementById("formulari").onsubmit = valida;
+                document.getElementById("esborra").onclick = deleteAllCookies;
+                //Recupera cookies
+                var nomUsu = getCookie("nomUsuari");
+                if (typeof nomUsu != 'undefined' && nomUsu != null) {
+                    document.getElementById("usuari").value = nomUsu;
+                }
+            };
+        </script>
+
+    </head>
+    <body>
+        <h1>Proves galetes</h1>
+        <form id="formulari" action="repGet.html" method="POST">
+            <p>
+                <label for="usuari">Usuari: </label><input type="text" name="usuari"
+                                                           id="usuari">
+            </p>
+            <p>
+                <label for="usuari">Contrasenya: </label><input type="password"
+                                                                name="contrasenya" id="contrasenya">
+            </p>
+            <p>
+                <button type="submit">Enviar</button>
+                <button type="button" id="esborra">Eliminar galetes</button>
+        </form>
+    </body>
+</html>

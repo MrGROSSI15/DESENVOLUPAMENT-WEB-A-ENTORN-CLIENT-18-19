@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crea una pàgina amb una funció anomenada simpatic que rebi com a paràmetre una cadena de caràcters amb un
+        nom i saludi aquesta persona. Posa un botó a la pàgina que cridi aquesta funció (event onclick).
+
+        Nota: excepcionalment podeu incloure la crida a la funció dins de l’element html.</title>
+</head>
+
+<body>
+    <h2>Crea una pàgina amb una funció anomenada simpatic que rebi com a paràmetre una cadena de caràcters
+        amb un nom i saludi aquesta persona. Posa un botó a la pàgina que cridi aquesta funció (event onclick).
+
+        Nota: excepcionalment podeu incloure la crida a la funció dins de l’element html.</h2>
+
+    <script>
+        var nom = prompt("Digues el teu nom: ");
+        function simpatic(nom) {
+            alert("Hola " + nom + " ! ");
+
+        }
+    </script>
+    <button onclick="simpatic(nom)">Salutacions</button>
+    <p><a href="index.html">Torna a l'Index</a></p>
+</body>
+
+</html>

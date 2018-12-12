@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ordena 3 números</title>
+</head>
+<body>
+	<h1>Ordena 3 números</h1>
+	<h3>Dades originals</h3>
+	<script type="text/javascript">
+		var a = prompt("Entri el primer número: ");
+		document.write("<p>a=" + a + "</p>");
+		var b = prompt("Entri el segon número: ");
+		document.write("<p>b=" + b + "</p>");
+		var c = prompt("Entri el tercer número: ");
+		document.write("<p>c=" + c + "</p>");
+		var d;
+		if (a > b) {
+			d = a;
+			a = b;
+			b = d;
+		}
+		if (a > c) {
+			d = a;
+			a = c;
+			c = d;
+		}
+		if (b > c) {
+			d = b;
+			b = c;
+			c = d;
+		}
+	</script>
+	<h3>Dades ordenades</h3>
+	<script type="text/javascript">
+		document.write("<p>a=" + a + "</p>");
+		document.write("<p>b=" + b + "</p>");
+		document.write("<p>c=" + c + "</p>");
+	</script>
+	<p>
+		<a href="index.html">Tornar</a>
+	</p>
+</body>
+</html>

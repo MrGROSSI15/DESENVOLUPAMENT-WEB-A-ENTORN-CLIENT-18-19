@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Notes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/funcionsArrays.js"></script>
+        <script type="text/javascript">
+
+            window.onload = function () {
+                var notes = [];
+                document.getElementById("bAfegir").onclick = function () {
+                    notes.push(document.getElementById("nota").value * 1);
+                    document.getElementById("nota").value="";
+                    document.getElementById("nota").focus();
+                };
+                document.getElementById("bCalcular").onclick = function () {
+                    document.getElementById("mostrador").innerHTML = "<p>" + JSON.stringify(notes) + "</p>" +
+                            "<p><strong>Màxim: </strong>" + maxim(notes) + "</p>" +
+                            "<p><strong>Mínim: </strong>" + minim(notes) + "</p>" +
+                            "<p><strong>Mitjna: </strong>" + mitjana(notes) + "</p>";
+
+
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Notes</h1>
+        <form>
+            <p><label for="nota">Nota: </label><input type="text" id="nota"></p>
+            <p><button type="button" id="bAfegir">Afegir nota</button> <button type="button" id="bCalcular">Calcular</button></p>
+        </form>
+        <div id="mostrador"></div>
+    </body>
+</html>

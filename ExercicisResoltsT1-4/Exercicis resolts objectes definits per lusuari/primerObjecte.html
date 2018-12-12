@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Primer objecte</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            window.onload = function () {
+                var alumne1 = {nom: "Joan", llinatges: "Morro Vallespir", cicle: "GSDAW", grup: "S1W"};
+                var alumne2 = {};
+                alumne2.nom = "Pere";
+                alumne2.llinatges = "Cabot Nadal";
+                alumne2.cicle = "GSDAM";
+                alumne2.grup = "S2P";
+
+                for (var atribut in alumne1) {
+                    document.getElementById("infoAlumne1").innerHTML += "<p><strong>" + atribut + ": </strong>" + alumne1[atribut] + "</p>";
+                }
+                for (var atribut in alumne2) {
+                    document.getElementById("infoAlumne2").innerHTML += "<p><strong>" + atribut + ": </strong>" + alumne2[atribut] + "</p>";
+                }
+            };
+        </script>
+
+    </head>
+    <body>
+        <h1>Primer objecte</h1>
+        <div id="infoAlumne1">
+            <h2>Primer alumne</h2>
+            <p><code>var alumne1 = {nom: "Joan", llinatges: "Morro Vallespir", cicle: "GSDAW", grup: "S1W"};</code></p>
+        </div>
+        <div id="infoAlumne2">
+            <h2>Segon alumne</h2>
+            <pre>            var alumne2 = {};
+            alumne2.nom = "Pere";
+            alumne2.llinatges = "Cabot Nadal";
+            alumne2.cicle = "GSDAM";
+            alumne2.grup = "S2P"; </pre>
+    </div>
+</body>
+</html>

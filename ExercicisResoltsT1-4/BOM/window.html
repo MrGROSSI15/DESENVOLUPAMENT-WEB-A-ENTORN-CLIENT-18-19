@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Window</title>
+        <script type="text/javascript">
+            var tanca;
+            window.onload = function () {
+                document.getElementById("bTanca").onclick = function () {
+                    tanca.close();
+                };
+                document.getElementById("bObrir").onclick = function () {
+                    tanca = window.open('tanca.html', 'Tanca', 'width:500, height:500');
+                };
+                document.getElementById("bResize").onclick = function () {
+                    tanca.resizeTo(500, 400);
+                };
+                document.getElementById("bMove").onclick = function () {
+                    tanca.moveTo(500, 400);
+                };
+
+                document.getElementById("bCanvia").onclick = function () {
+                    tanca.document.getElementById('paragraf').innerHTML = 'Canviat';
+                };
+
+
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Window</h1>
+
+        <button id="bObrir">Obre</button>
+        <button id="bResize">Modifica</button>
+        <button id="bMove">Mou</button>
+        <button id="bCanvia">Canvia</button>
+        <button id="bTanca">Tanca</button>
+    </body>
+</html>

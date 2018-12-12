@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Simpàtic</title>
+<script type="text/javascript">
+	function factorial(numero) {
+		var producte = 1;
+		for ( var index = 2; index <= numero; index++) {
+			producte *= index;
+		}
+		return producte;
+	}
+</script>
+</head>
+<body>
+	<h1>Factorial</h1>
+	<script type="text/javascript">
+		var num = prompt("Factorial de: ");
+		document.write("<p> El factorial de " + num + " és " + factorial(num)
+				+ "</p>");
+	</script>
+	<p>
+		<a href="index.html">Tornar</a>
+	</p>
+</body>
+</html>

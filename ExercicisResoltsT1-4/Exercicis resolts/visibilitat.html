@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Visibilitat</title>
+</head>
+<body>
+	<h1>Visibilitat</h1>
+	<h2>Primer guió</h2>
+	<script type="text/javascript">
+		var primera;// = "primera";
+		segona = "segona";
+		function prova() {
+			var tercera = "tercera";
+			quarta = "quarta";
+			if (true) {
+				cinquena = "cinquena";
+			}
+			document.write("<p>Dins funció primera: " + primera + "</p>");
+			document.write("<p>Dins funció segona: " + segona + "</p>");
+			document.write("<p>Dins funció tercera: " + tercera + "</p>");
+			document.write("<p>Dins funció quarta: " + quarta + "</p>");
+			document.write("<p>Dins funció cinquena: " + cinquena + "</p>");
+		}
+		prova();
+		if (typeof primera != "undefined") {
+			document.write("<p>Dins primer guió primera: " + primera + "</p>");
+		} else {
+			document.write("<p>Primera undefined</p>");
+		}
+		if (typeof segona != "undefined") {
+			document.write("<p>Dins primer guió primera: " + segona + "</p>");
+		} else {
+			document.write("<p>Segona undefined</p>");
+		}
+		if (typeof tercera != "undefined") {
+			document.write("<p>Dins primer guió tercera: " + tercera + "</p>");
+		} else {
+			document.write("<p>Tercera undefined</p>");
+		}
+		if (typeof quarta != "undefined") {
+			document.write("<p>Dins primer guió quarta: " + quarta + "</p>");
+		} else {
+			document.write("<p>Quarta undefined</p>");
+		}
+		if (typeof cinquena != "undefined") {
+			document
+					.write("<p>Dins primer guió cinquena: " + cinquena + "</p>");
+		} else {
+			document.write("<p>Cinquena undefined</p>");
+		}
+	</script>
+	<h2>Segon guió</h2>
+	<script type="text/javascript">
+		if (typeof primera != "undefined") {
+			document.write("<p>Dins segon guió primera: " + primera + "</p>");
+		} else {
+			document.write("<p>Primera undefined</p>");
+		}
+		if (typeof segona != "undefined") {
+			document.write("<p>Dins segon guió primera: " + segona + "</p>");
+		} else {
+			document.write("<p>Segona undefined</p>");
+		}
+		if (typeof tercera != "undefined") {
+			document.write("<p>Dins segon guió tercera: " + tercera + "</p>");
+		} else {
+			document.write("<p>Tercera undefined</p>");
+		}
+		if (typeof quarta != "undefined") {
+			document.write("<p>Dins segon guió quarta: " + quarta + "</p>");
+		} else {
+			document.write("<p>Quarta undefined</p>");
+		}
+		if (typeof cinquena != "undefined") {
+			document.write("<p>Dins segon guió cinquena: " + cinquena + "</p>");
+		} else {
+			document.write("<p>Cinquena undefined</p>");
+		}
+	</script>
+	<h2>Conclusions</h2>
+	<p>Una variable definida fora de qualsevol funció és global a la
+		pàgina tant si es defineix amb var o sense.</p>
+	<p>Una variable definida dins d'una funció és:</p>
+	<ul>
+		<li>global a la pàgina si es defineix sense var.</li>
+		<li>local a la funció si es defineix amb var.</li>
+	</ul>
+	<p>Una variable sense valor assignat també dona <em>undefined</em> quan li aplicam <em>typeof</em>	</p>
+	<p><a href="index.html">Tornar</a></p>
+</body>
+</html>

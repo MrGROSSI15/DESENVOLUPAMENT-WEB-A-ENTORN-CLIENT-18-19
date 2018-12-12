@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    var finestra
+
+    function obrir() {
+        finestra = window.open(
+            "file:///C:/Users/marc/Documents/DESENVOLUPAMENT-WEB-A-ENTORN-CLIENT-18-19/SWDWCTema3/bom/tanca.html",
+            "finestra", "width=600,height=600");
+
+    }
+
+    function tancar() {
+        finestra = finestra.close();
+
+    }
+
+    function moure() {
+        finestra.moveTo(
+            "file:///C:/Users/marc/Documents/DESENVOLUPAMENT-WEB-A-ENTORN-CLIENT-18-19/SWDWCTema3/bom/tanca.html",
+            "finestra", 500, 100);
+        finestra.focus();
+        finestra.document.write("<p>Finestra MOGUDA</p>");
+    }
+
+    function modifica() {
+        finestra.resizeBy(250, 250);
+        finestra.focus();
+    }
+
+    function escriu() {
+        finestra.document.write("Modificat");
+    }
+</script>
+
+<body>
+    <h1>Window</h1>
+    <button onclick="obrir()">Obrir</button>
+    <button onclick="tancar()">Tancar</button>
+    <button onclick="moure()">Moure</button>
+    <button onclick="modifica()">Modifica</button>
+    <button onclick="escriu()">Escriu</button>
+
+
+
+</body>
+
+</html>

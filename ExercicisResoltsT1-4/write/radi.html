@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Calcular la longitud d'una circumferència a partir del radi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function longitudCircumferencia(r) {
+                return 2 * Math.PI * r;
+            }
+
+            function executar() {
+                var r = parseInt(document.getElementById("radi").value);
+                r = parseInt(r);
+                document.getElementById("longitud").innerHTML = "Longitud: " + longitudCircumferencia(r);
+            }
+
+            window.onload = function () {
+                document.getElementById("bCalcular").onclick = executar;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Calcular la longitud d'una circumferència a partir del radi</h1>
+        <form>
+            <p><label for="radi">Radi: </label><input type="text" id="radi"></p>    
+            <p id="longitud">Longitud: </p>
+            <button id="bCalcular" type="button">Calcular</button>
+        </form>
+    </body>
+</html>

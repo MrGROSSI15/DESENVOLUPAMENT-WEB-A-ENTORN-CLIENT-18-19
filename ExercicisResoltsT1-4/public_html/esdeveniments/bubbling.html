@@ -1,0 +1,67 @@
+<html id="arrel">
+
+    <head>
+        <title>Prova bubling</title>
+        <style type="text/css">
+            p {
+                background-color: azure;
+            }
+            div{
+                background-color: blanchedalmond;
+                padding: .5em;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function () {
+
+                document.getElementById("capa").onclick = function (e) {
+                    alert("Capa\nthis: " + this + " e:" + e.target);
+                };
+                document.getElementById("hola").onclick = function (e) {
+                    e.stopPropagation();
+                    alert("Hola\nthis: " + this + " e:" + e.target);
+                };
+                document.getElementById("adeu").onclick = function (e) {
+
+                    alert("Adeu\nthis: " + e.currentTarget + " e:" + e.target);
+                };
+
+                //multiple2 sobreescriu multiple1.  
+                document.getElementById("multiple").onclick = function (e) {
+                    alert("multiple1\nthis: " + this + " e:" + e.target);
+                };
+                document.getElementById("multiple").onclick = function (e) {
+                    alert("multiple2\nthis: " + this + " e:" + e.target);
+                };
+                //Multiple 3 i 4 s'afegeixen.
+                document.getElementById("multiple").addEventListener("click", function (e) {
+                    alert("multiple3\nthis: " + this + " e:" + e.target);
+                }, true);
+                document.getElementById("multiple").addEventListener("click", function (e) {
+                    alert("multiple4\nthis: " + this + " e:" + e.target);
+                }, true);
+                
+                //Podem propagar els esdeveniments fins a l'html.
+                document.getElementById("arrel").addEventListener("click", function (e) {
+                    alert("arrel\nthis: " + this + " e:" + e.target);
+                }, true);
+                document.getElementById("cos").addEventListener("click", function (e) {
+                    alert("cos\nthis: " + this + " e:" + e.target);
+                }, true);
+
+            };
+
+
+        </script>
+    </head>
+
+    <body id="cos">
+        <h1>Prova bubbling</h1>
+        <div id="capa">
+            <p id="hola">Hola</p>
+            <p id="adeu">Adeu</p>
+        </div>
+        <p id="multiple">multiple</p>
+    </body>
+
+</html>

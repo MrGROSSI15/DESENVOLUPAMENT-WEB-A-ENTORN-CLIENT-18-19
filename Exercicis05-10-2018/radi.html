@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    h1   {color: blue;
+        font-family: verdana;
+        font-size: 50}
+    
+    </style>
+</head>
+
+<body>
+    <h1>CALCULAR RADI</h1>
+    <p id="radi">El teu radi:</p>
+    <p id="longitud">Longitud del radi:</p>
+    <button id="boto">Calcul</button>
+    <script type="text/javascript">
+        document.getElementById("boto").onclick = function(){
+
+        var radi = prompt("Radi de la circumferència? ");
+        var longitud = 2 * 3.14 * radi;
+        //document.write("El radi de la circumferència és: " + longitud);
+
+        document.getElementById("radi").innerHTML += radi;
+        document.getElementById("longitud").innerHTML ="Longitud del radi: " + longitud;
+        }
+    </script>
+    <a href="index.html">Torna a l'index</a>
+</body>
+
+</html>

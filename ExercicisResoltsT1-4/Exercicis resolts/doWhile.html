@@ -1,0 +1,30 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>While</title>
+</head>
+<body>
+	<h1>While</h1>
+	<script type="text/javascript">
+		var inici = prompt("Inici: ");
+		document.write("<p>inici=" + inici + "</p>");
+		var fi = prompt("Fi: ");
+		document.write("<p>fi=" + fi + "</p>");
+		if (inici > fi) {
+			var aux = inici;
+			inici = fi;
+			fi = aux;
+		}
+		var index = inici;
+		do {
+			document.write("<p>" + index + "</p>");
+			index++;
+		} while (index <= fi);
+	</script>
+	<p>
+		<a href="index.html">Tornar</a>
+	</p>
+</body>
+</html>

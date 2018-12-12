@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        .body {
+            background-color: #32383e;
+        }
+    </style>
+
+
+    <title>BOOM</title>
+</head>
+<script>
+    var finestra
+
+    function obrir() {
+        finestra = window.open("", "finestra", "width=200,height=100");
+        finestra.document.write("<p>Finestra OBERTA</p>");
+
+    }
+    //var finestra
+
+    function tancar() {
+        finestra = finestra.close("", "finestra", "width=200,height=100");
+        //finestra.document.write("<p>Finestra OBERTA</p>");
+
+    }
+
+    function moure() {
+        finestra = finestra.moveTo(500, 100);
+        finestra.document.write("<p>Finestra MOGUDA</p>");
+        finestra.focus();
+    }
+
+    function codeName(){
+        var navegador = "Nom del navegador: " + navigator.appCodeName;
+        alert(navegador);
+    }
+
+    function platform(){
+        var navegadorP = "Plataforma: " + navigator.platform;
+        alert(navegadorP);
+    }
+
+    function version(){
+        var navegadorV = "Versio: " + navigator.appVersion;
+        alert(navegadorV);
+    }
+
+    function altura(){
+        var pantalla = "L'altura de la pantalla és: " + screen.availHeight + "px";
+        alert(pantalla);
+    }
+
+        function amplada(){
+        var pantallaA = "L'altura de la pantalla és: " + screen.availWidth + "px";
+        alert(pantallaA);
+    }
+
+    function color(){
+        var pantallaC = "Profunditat de color de: " + screen.colorDepth + " bits per px";
+        alert(pantallaC);
+    }
+
+    window.onload = function historial(){
+        var historial = history.length;
+        document.getElementById("hist").innerHTML = historial;
+    }
+
+    windows.onload = function hostName(){
+        var nom = location.hostname;
+        document.getElementById("nom").innerHTML = nom;
+    }
+
+        windows.onload = function pathName(){
+        var nomP = location.pathname;
+        document.getElementById("nomP").innerHTML = nomP;
+    }
+
+        windows.onload = function search(){
+        var cerca = location.search;
+        document.getElementById("cerca").innerHTML = cerca;
+    }
+</script>
+
+<body class="body">
+    <table class="table table-dark">
+        <thead id="tableHead">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Window</th>
+                <th scope="col">Accio</th>
+                <th scope="col">Mira</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <th scope="row">1</th>
+                <td>Open</td>
+                <td>
+                    The open() method opens a new browser window.
+                </td>
+
+                <td>
+
+                    <button onclick="obrir()" class="btn btn-dark">Obrir "finestra"</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Close</td>
+                <td>
+                    The close() method closes the current window.
+                </td>
+                <td>
+                    <button onclick="tancar()" class="btn btn-dark">Tancar "finestra"</button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Move</td>
+                <td>
+                    The moveTo() method moves a window's left and top edge to the specified coordinates.
+                </td>
+                <td><button onclick="moure()" class="btn btn-dark">Moure "finestra"</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-dark">
+            <thead id="tableHead">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Navigator</th>
+                    <th scope="col">Accio</th>
+                    <th scope="col">Mira</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>.appCodeName</td>
+                    <td>
+                        Torna el codi del navegador.
+                    </td>
+    
+                    <td>
+    
+                        <button onclick="codeName()" class="btn btn-dark">"Ensenya"</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>.platform</td>
+                    <td>
+                        Torna a quina plataforma està compilat el navegador
+                    </td>
+                    <td>
+                        <button onclick="platform()" class="btn btn-dark">"Ensenya"</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>.appVersion</td>
+                    <td>
+                        Torna la versió
+                    </td>
+                    <td><button onclick="version()" class="btn btn-dark">"Ensenya"</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-dark">
+            <thead id="tableHead">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Screen</th>
+                    <th scope="col">Accio</th>
+                    <th scope="col">Mira</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>.availHeight</td>
+                    <td>
+                        L'alçada disponible de la pantalla.
+                    </td>
+    
+                    <td>
+    
+                        <button onclick="altura()" class="btn btn-dark">"Ensenya"</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>.availWidth</td>
+                    <td>
+                      L'amplada de la pantalla
+                    </td>
+                    <td>
+                        <button onclick="amplada()" class="btn btn-dark">"Ensenya"</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>.colorDepth</td>
+                    <td>
+                        La profunditat de color en bits per a representar imatge
+                    </td>
+                    <td><button onclick="color()" class="btn btn-dark">"Ensenya"</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-dark">
+            <thead id="tableHead">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">History</th>
+                    <th scope="col">Accio</th>
+                    <th scope="col">Mira</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>.length</td>
+                    <td>
+                        nombre de URL's dins l'històric
+                    </td>
+                    <td>
+                        <p id="hist"></p>
+                        <!-- <button onclick="historial()" class="btn btn-dark">"Ensenya"</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-dark">
+                <thead id="tableHead">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Accio</th>
+                        <th scope="col">Mira</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>.hostname</td>
+                        <td>
+                                Mostra el domini (aqui no surt perque no esteim a cap servidor)
+                        </td>
+        
+                        <td>
+                            <p id="nom"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>.pathname</td>
+                        <td>
+                                Torna la ruta dins el domini (aqui no surt perque no esteim a cap servidor)
+                        </td>
+                        <td>
+                            <p id="nomP"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>.search</td>
+                        <td>
+                                La part de la consulta, la que va després de ? (aqui no surt perque no esteim a cap servidor)
+                        </td>
+                        <td>
+                            <p id="cerca"></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+</body>
+</html>

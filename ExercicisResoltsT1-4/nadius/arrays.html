@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Arrays</title>
+        <script type="text/javascript" src="./js/utilitats.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                //Exercici 1
+                var array = ['0', 1, 2.5, 3, 4, "5", 6, 7, 8.5, true, 10];
+                //Exercici 2        
+                array[15] = 15;
+                //Exercici 3
+                var cadena = "";
+                for (var i = 0; i <= array.length; i++) {
+                    cadena += "<p>Posicio " + i + ": " + array[i] + "</p>";
+                }
+                document.getElementById("Exercici3").innerHTML = cadena;
+
+                //Exercici 4
+                cadena = "";
+                for (var i in array) {
+                    cadena += "<p>" + i + "</p>";
+                }
+                document.getElementById("Exercici4").innerHTML = cadena;
+
+                //Exercici 5
+                var paraules1 = ["això", "era", "i"];
+                cadena = "<p>Array 1: " + JSON.stringify(paraules1) + "</p>";
+                var paraules2 = ["no", "era"];
+                cadena += "<p>Array 2: " + JSON.stringify(paraules2) + "</p>";
+                var concatenat = paraules1.concat(paraules2);
+                cadena += "<p>Array concatenat: " + JSON.stringify(concatenat) + "</p>";
+                document.getElementById("Exercici5").innerHTML = cadena;
+
+                //Exercici 6
+                var frase = concatenat.join(" ");
+                document.getElementById("Exercici6").innerHTML = "<p>" + frase + "</p>";
+
+                //Exercici 7
+                var fraseGirada = concatenat.reverse();
+                fraseGirada = fraseGirada.join(" ");
+                document.getElementById("Exercici7").innerHTML = "<p>" + fraseGirada + "</p>";
+
+                //Exercici 8
+                var pila = [];
+                for (var i = 0; i < 10; i++) {
+                    pila.push(i);
+                }
+                cadena = "";
+                while (pila.length > 0) {
+                    cadena += "<p>" + pila.pop() + "</p>";
+                }
+                document.getElementById("Exercici8").innerHTML = cadena;
+
+                //Exercici 9
+                var ordena = [];
+                for (var i = 0; i < 10; i++) {
+                    ordena.push(Math.random() * 100 + 1);
+                }
+
+                ordena.sort(function (a, b) {
+                    return a - b;
+                });
+                cadena = "";
+                for (var i in ordena) {
+                    cadena += "<p>" + ordena[i] + "</p>";
+                }
+                document.getElementById("Exercici9").innerHTML = cadena;
+
+               
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Arrays</h1>
+        <h2>Recorregut utilitzant l'index</h2>
+        <div id="Exercici3"></div>
+        <h2>Recorregut utilitzant in</h2>
+        <div id="Exercici4"></div>
+        <h2>Concatena dos arrays</h2>
+        <div id="Exercici5"></div>
+
+        <h2>Convertir array en frase</h2>
+        <div id="Exercici6"></div>
+
+        <h2>Inverteix l'array i converti'l en frase</h2>
+        <div id="Exercici7"></div>
+
+        <h2>Implementa una pila utilitzant els mètodes que proporciona
+            l'array</h2>
+        <div id="Exercici8"></div>
+        <h2>Crea un array de valors numèrics. Ordena-los utilitzant el
+            mètode sort</h2>
+
+        <div id="Exercici9"></div>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mostruari d'esdeveniments</title>
+<style type="text/css">
+#mostrador{
+	width:300px;
+	height:300px;
+	overflow:scroll;
+	border: 1px solid black;
+}
+</style>
+<script type="text/javascript">
+	var comptador = 0;
+	function afegeix(identificador, cadena) {
+		var objecte = document.getElementById(identificador);
+		objecte.innerHTML = cadena + objecte.innerHTML;
+	}
+
+	window.onload = function() {
+		document.getElementById("paragraf").onmouseover = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador
+					+ ". paragraf: onmouseover<p>");
+		};
+		document.getElementById("paragraf").onmouseout = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador
+					+ ". paragraf: onmouseout<p>");
+		};
+		document.getElementById("paragraf").onmouseup = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". paragraf: onmouseup<p>");
+		};
+		document.getElementById("paragraf").onmousedown = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador
+					+ ". paragraf: onmousedown<p>");
+		};
+		//	document.getElementById("paragraf").onmousemove=function(){comptador++; afegeix("mostrador","<p>"+comptador+". paragraf: onmousemove<p>");};
+		document.getElementById("paragraf").onclick = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". paragraf: onclick<p>");
+		};
+		document.getElementById("paragraf").ondblclick = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador
+					+ ". paragraf: ondblclick<p>");
+		};
+
+		document.getElementById("texte").onmouseover = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onmouseover<p>");
+		};
+		document.getElementById("texte").onmouseout = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onmouseout<p>");
+		};
+		document.getElementById("texte").onmouseup = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onmouseup<p>");
+		};
+		document.getElementById("texte").onmousedown = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onmousedown<p>");
+		};
+		//	document.getElementById("texte").onmousemove=function(){comptador++; afegeix("mostrador","<p>"+comptador+". paragraf: onmousemove<p>");};
+		document.getElementById("texte").onclick = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onclick<p>");
+		};
+		document.getElementById("texte").ondblclick = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: ondblclick<p>");
+		};
+
+		document.getElementById("texte").onkeydown = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onkeydown<p>");
+		};
+		document.getElementById("texte").onkeyup = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onkeyup<p>");
+		};
+		document.getElementById("texte").onkeypress = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onkeypress<p>");
+		};
+
+		document.getElementById("texte").onfocus = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onfocus<p>");
+		};
+		document.getElementById("texte").onblur = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onblur<p>");
+		};
+		document.getElementById("texte").onchange = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onchange<p>");
+		};
+		document.getElementById("texte").onselect = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". texte: onselect<p>");
+		};
+
+		document.getElementById("formulari").onsubmit = function(esdeveniment) {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". formulari: onsubmit<p>");
+                        esdeveniment.preventDefault();
+		};
+		document.getElementById("formulari").onreset = function() {
+			comptador++;
+			afegeix("mostrador", "<p>" + comptador + ". formulari: onreset<p>");
+		};
+
+		comptador++;
+		afegeix("mostrador", "<p>" + comptador + ". window: onload<p>");
+		//window.onunload=function(){confirm("voleu sortir?"); };
+		window.onbeforeunload = function() {
+			return 'Alerta!!';
+		}
+
+	}
+</script>
+</head>
+<body>
+	<h1>Mostruari d'esdeveniments</h1>
+	<p id="paragraf">Això era i no era, bon viatge faci la cadernera</p>
+	<form action="#" method="GET" id="formulari">
+		<input type="text" id="texte" name="texte">
+		<button type="submit">Enviar</button>
+		<button type="reset">Reset</button>
+		<!--<p>
+			<a href="http://www.google.cat">Google</a>
+		</p>-->
+	</form>
+	<h2>Esdeveniments</h2>
+	<div id="mostrador"></div>
+</body>
+</html>
+

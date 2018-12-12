@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Comptar pulsacions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            
+            window.onload = function () {
+                var comptador=0;
+                
+                document.getElementById("formulari").onkeypress=function(){
+                    comptador++;
+                    document.getElementById("mostrador").innerHTML="<p>Comptador tecles: "+comptador+"</p>";
+                };
+
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Comptar pulsacions</h1>
+        <form id="formulari">
+            <p><label for="text1">Text1: </label><input type="text" name="text1" id="text1"></p>
+            <p><label for="text2">Text2: </label><input type="text" name="text2" id="text2"></p>
+            <p><label for="text3">Text3: </label><input type="text" name="text3" id="text3"></p>
+            <button type="submit" id="boto">Pitja</button>
+            <div id="mostrador"></div>
+        </form>
+    </body>
+</html>

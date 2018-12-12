@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Compte enrere</title>
+<script type="text/javascript">
+	var interval = 10;
+	var timer;
+	function resta() {
+		interval--;
+		document.getElementById("temps").innerHTML = interval;
+		if (interval == 0) {
+			clearInterval(timer);
+			location.assign("contingut.html");
+		}
+	}
+        
+        window.onload=function(){
+            timer = setInterval(resta, 1000);
+        };
+</script>
+</head>
+<body>
+	<h1>Compte enrere</h1>
+
+	<h2 id="temps">10</h2>
+
+	<p>
+		<a href="index_1.html">Tornar</a>
+	</p>
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculadora</title>
+<script type="text/javascript" src="js/utilitats.js"></script>
+</head>
+<body>
+	<h1>Calculadora</h1>
+	<script type="text/javascript">
+		var a = llegirSencer("Valor de a");
+		var b = llegirSencer("Valor de b");
+		
+		document.write("<p> a=" + a + "</p>");
+		document.write("<p> b=" + b + "</p>");
+		document.write("<p> a+b=" + suma(a, b) + "</p>");
+		document.write("<p> a-b=" + resta(a, b) + "</p>");
+		document.write("<p> a*b=" + multiplicacio(a, b) + "</p>");
+		document.write("<p> a/b=" + divisio(a, b) + "</p>");
+		document.write("<p> a^b=" + potencia(a, b) + "</p>");
+	</script>
+	<p>
+		<a href="index.html">Tornar</a>
+	</p>
+</body>
+</html>

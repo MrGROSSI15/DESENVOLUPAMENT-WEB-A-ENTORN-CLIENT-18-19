@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="json.js"></script>
+    <script>
+        window.onload = function(){
+            document.getElementById("btn2").onclick = function(){
+                var json = JSON.stringify(functioAl());
+                document.getElementById("exe2").innerHTML = json;
+            }
+            
+            document.getElementById("btn3").onclick = function(){
+                var jsons= JSON.parse('{"nom":"Marc","cognom":"Grossi","cognom2":"Bermejo"}');
+                document.getElementById("exe3").innerHTML = jsons.nom + " " + jsons.cognom + " " + jsons.cognom2;
+        }
+    }
+    </script>
+    <h1>JSON EXERCICIS</h1>
+     <button type="button" id="btn2" >Exe2</button>
+     <p id="exe2"></p> 
+
+     <button type="button" id="btn3" >Exe3</button>
+     <p id="exe3"></p>
+</body>
+</html>

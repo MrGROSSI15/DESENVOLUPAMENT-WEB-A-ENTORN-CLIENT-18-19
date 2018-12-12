@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Exercici2</h3>
+    <p>URL a codificar: "http://www.iespaucasesnoves.cat?nom=jo mateix" </p>
+<button onclick="codificar()">Encode</button>
+
+<p id="encode"> </p>
+<p id="encode2"> </p>
+<h3>Exercici4</h3>
+<button onclick="moneda()">Tira la moneda</button>
+<p id="moneda"></p>
+
+<script>
+function codificar() {
+    var uri = "http://www.iespaucasesnoves.cat?nom=jo mateix";
+    var resultat = encodeURIComponent(uri);
+    var uri2 = "http://www.iespaucasesnoves.cat?nom=jo mateix";
+    var resultat2 = encodeURI(uri2);
+    document.getElementById("encode").innerHTML = resultat;
+    document.getElementById("encode2").innerHTML = resultat2;
+
+}
+document.write("<h3>Exercici3</h3>")
+ var guio = document.write("<p>Paragraf generat a partir d\'eval prova</p>");
+
+eval(guio);
+
+function moneda() {
+    var monedas = Math.round(Math.random());
+    if(monedas == 1){
+        document.getElementById("moneda").innerHTML = "Cara";
+
+    }else{
+        document.getElementById("moneda").innerHTML = "Creu";
+
+    }
+
+console.log(monedas);
+}
+document.write("<h3>Exercici5</h3>")
+var grossi = new Function("a","b","return a + b");
+var sortida = grossi(5,2);
+document.write("Suma " + sortida);
+</script>
+
+</body>
+</html>

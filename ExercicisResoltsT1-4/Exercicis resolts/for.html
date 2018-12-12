@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>For</title>
+</head>
+<body>
+	<h1>For</h1>
+	<script type="text/javascript">
+		var inici = prompt("Inici: ");
+		document.write("<p>inici=" + inici + "</p>");
+		var fi = prompt("Fi: ");
+		document.write("<p>fi=" + fi + "</p>");
+		if (inici > fi) {
+			var aux = inici;
+			inici = fi;
+			fi = aux;
+		}
+		for ( var index = inici; index <= fi; index++) {
+			document.write("<p>" + index + "</p>");
+		}
+	</script>
+	<p>
+		<a href="index.html">Tornar</a>
+	</p>
+</body>
+</html>

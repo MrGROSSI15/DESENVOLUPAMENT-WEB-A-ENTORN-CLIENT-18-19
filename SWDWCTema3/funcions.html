@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="estils.css">
+    <title>ExercicisTema3 Marc Grossi</title>
+    <script>
+        window.onload = function () {
+            var num1 = 5;
+            var num2 = 5;
+            var operació = suma;
+            document.getElementById("Exercici2").innerHTML += ("<br>La suma de " + num1 + " i " + num2 + " = " + suma(num1, num2));
+            var resta = function (a, b) {
+                return a - b;
+            }
+            document.getElementById("Exercici3").innerHTML += ("<br>La resta " + resta(10, 5));
+
+            //Exe4
+            var n1 = 5;
+            var n2 = 5;
+            function calcula(n1, n2, multi) {
+                return multi(n1, n2);
+            }
+            document.getElementById("Exercici4").innerHTML += ("<br>La multiplicacio de " + n1 + " x " + n2 + " = " + calcula(n1, n2, multi));
+
+            function gran(a, b) {
+                var cadena = "El resultat: ";
+
+                function multi(valor) {
+                    return cadena + valor;
+                }
+                return multi(a * b);
+            }
+            document.getElementById("Exercici5").innerHTML += ("<br>" + gran(5, 5));
+
+            function parametres(a, b, c, d) {
+                return arguments[0] + "," + arguments[1] + "," + arguments[2] + "," + arguments[3];
+            }
+            document.getElementById("Exercici6").innerHTML += ("<br>" + parametres(7, "hola", "que", "tal"));
+
+            function mostra() {
+                alert("Exercici7");
+            }
+            document.getElementById("Exercici7").onclick = mostra;
+
+            function mostraDades(dades){
+                dades = prompt("Missatge");
+                alert(dades);
+            }
+            document.getElementById("Exercici8").onclick = mostraDades;
+
+                
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <script src="utilitats.js"></script>
+    <div id="Exercici2" class="tots">
+        Assigna la funció suma a una variable operació. Utilitza aquesta variable per a calcular la suma de dos
+        números.
+    </div>
+    <div id="Exercici3" class="tots">
+        Crea una funció anònima assignada a una variable que rebi com a mínim dos paràmetres i comprova que funciona.
+
+    </div>
+    <div id="Exercici4" class="tots">
+        Crea una funció calcula que rebi tres paràmetres, els dos primers seran números i el tercer una funció. Dins el
+        cos de la funció s'executarà la funció passada com a paràmetre amb les altres dades. Prova si funciona.
+    </div>
+    <div id="Exercici5" class="tots">
+        Crea una funció amb una funció interna com les del pdf i provau-ho.
+    </div>
+    <div id="Exercici6" class="tots">
+        Crea una funció amb quatre paràmetres. Dins el cos de la funció utilitza l'objecte arguments i les propietats
+        de la funció per a mostrar tota la informació possible.
+    </div>
+    <div class="tots">
+        Crea una funció anomenada mostra que en executar-se mostri un alert. Assigna aquesta funció a
+        l'esdeveniment onclick d'un botó dins el windows onload.<br>
+        <button id="Exercici7" onclick="mostra()">jeje</button>
+    </div>
+    <div  class="tots">
+        Crea una funció anomenada mostraDades amb un paràmetre. En executar-se ha de mostrar aquest paràmetre dins
+        d'un alert. Assigna aquesta funció a l'esdeveniment onclick d'un botó dins del windows.onload<br>
+        <button id="Exercici8" onclick="mostraDades()">jiji</button>
+    </div>
+    <div id="Exercici9" class="tots">
+        Crea un formulari amb 10 botons amb identificadors del tipus boto0, boto1, ... Utilitza un for dins del
+        onload per inicialitzar-los i que mostri un alert amb el nombre de l'identificador.
+    </div>
+</body>
+
+</html>

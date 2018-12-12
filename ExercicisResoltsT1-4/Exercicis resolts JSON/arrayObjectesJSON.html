@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+1. Crea la pàgina objecteJSON.html. Crea un objecte amb les dades d'una 
+persona (nom, llinatges, ....) utilitzant la notació JSON. Mostra la informació 
+d'aquesta persona a la pàgina utilitzant la notació per punts.
+-->
+<html>
+    <head>
+        <title>Array d'objectes creat amb la notació JSON</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/json.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                var sCos="";
+                var persones =JSON.parse(creaArrayObjectesJSON());
+                var vTCap = document.getElementById("tcap");
+                for (var nomCamp in persones[0]) {
+                    vTCap.innerHTML += "<th>" + nomCamp + "</th>";
+                }
+                
+                for(index in persones){
+                    sCos+="<tr>";
+                    for(var nomCamp in persones[index]){
+                        sCos+="<td>"+persones[index][nomCamp]+"</td>";
+                    }
+                    sCos+="<tr>";
+                }
+                document.getElementById("cos").innerHTML = sCos+"</tr>";
+                document.getElementById("total").innerHTML = "Total: "+persones.length;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Array d'objectes creat amb la notació JSON</h1>
+        <table>
+            <thead>
+                <tr id="tcap"></tr>
+            </thead>
+            <tfoot><tr><td id="total"></td></tr></tfoot>
+            <tbody id="cos"></tbody>
+        </table>
+    </body>
+</html>
+

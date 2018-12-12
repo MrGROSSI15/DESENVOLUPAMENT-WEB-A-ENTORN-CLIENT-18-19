@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Compte enrere</title>
+        <script type="text/javascript">
+            var interval = 10;
+
+            var cerca = location.search;
+            if (cerca.length > 0) {
+                //elimina el ?
+                cerca = cerca.substring(1, cerca.length);
+                //dins params tenim un array on cada posició és de la forma parametre=valor
+                var params = cerca.split("&");
+                for (var index = 0; index < params.length; index++) {
+                    //parts[0]=nom parts[1]=valor
+                    var parts = params[index].split("=");
+                    //Si és correcte
+                    if (parts.length == 2) {
+                        if ((parts[0] == "durada") && (parts[1].length > 0)
+                                && (!isNaN(parts[1]))) {
+                            //modificam interval amb el valor rebut
+                            interval = parseInt(parts[1]);
+                        }
+                    }
+                }
+            }
+
+
+
+            window.onload = function () {
+                var timer;
+                function resta() {
+                    interval--;
+                    document.getElementById("temps").innerHTML = interval;
+                    if (interval == 0) {
+                        clearInterval(timer);
+                        //location.assign("contingut.html");
+                    }
+                }
+                timer = setInterval(resta, 1000);
+                document.getElementById("temps").innerHTML = interval;
+                document.getElementById("mostraInterval").innerHTML = "Interval: " + interval;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Compte enrere</h1>
+
+        <h2 id="temps">
+
+        </h2>
+        <p id="mostraInterval"></p>
+        <p>
+            <a href="index_1.html">Tornar</a>
+        </p>
+    </body>
+</html>
+

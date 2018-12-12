@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prevent default</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.onload = function () {
+                document.getElementById("formulari").onsubmit = function (e) {
+                    // e.preventDefault();
+                    return false;
+                };
+                document.getElementById("check").onclick = function (e) {
+                    //e.preventDefault();
+                     return false;
+                };
+                document.getElementById("cos").onclick = function (e) {
+                    alert("Onclick de cos");
+                };
+            };
+        </script>
+    </head>
+    <body id="cos">
+        <h1>Prevent default</h1>
+        <form id="formulari">
+            <p><label for="text">Text: </label><input type="text" id="text" name="text" value="Text per defecte"></p>
+            <p><label for="check">Check: </label><input type="checkbox" id="check" name="check" checked></p>
+            <p><button>Enviar</button></p>
+        </form>
+    </body>
+</html>

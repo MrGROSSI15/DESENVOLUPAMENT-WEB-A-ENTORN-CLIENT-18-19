@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proveïdor</title>
+    <link rel="stylesheet" type="text/css" href="css/proveidor.css">
+    <script src="js/proveidor.js"></script>
+</head>
+<body>
+<h1>Proveïdor</h1>
+<form id="fProveidor" action="repGet.html" method="get">
+    <hidden name="ident" id="ident"></hidden>
+    <p><label for="nom">Nom:</label><input type="text" name="nom" id="nom"></p>
+    <div class="ocult" id="avisNom">El nom és obligatori.</div>
+    <p><label for="nomFiscal">Nom fiscal:</label><input type="text" name="nomFiscal" id="nomFiscal"></p>
+    <div class="ocult" id="avisNomFiscal">El nom fiscal és obligatori.</div>
+    <p><label for="personaContacte">Persona de contacte:</label><input type="text" name="personaContacte"
+                                                                       id="personaContacte"></p>
+    <div class="ocult" id="avisPersona">És obligatori indicar una persona de contacte.</div>
+    <p><label for="cif">CIF:</label><input type="text" name="cif" id="cif"></p>
+    <div class="ocult" id="avisCIF">El CIF és obligatori.</div>
+    <fieldset>
+        <legend>Dades de contacte</legend>
+        <div class="contacte" id="dadesContacte">
+            <p><label for="telefon">Telèfon:</label><input type="tel" name="telefon" id="telefon"></p>
+            <p><label for="mobil">Mòbil:</label><input type="tel" name="mobil" id="mobil"></p>
+            <p><label for="email">Email:</label><input type="email" name="email" id="email"></p>
+            <p><label for="web">Web:</label><input type="url" name="web" id="web"></p>
+        </div>
+        <div class="ocult" id="avisContacte">S'ha d'especificar al manco una dada de contacte. No les pot deixar totes
+            en blanc.
+        </div>
+    </fieldset>
+
+    <p><label for="observacions">Observacions:</label><textarea name="observacions" id="observacions"></textarea></p>
+    <p>
+        <button type="submit" id="bEnviar">Enviar</button>
+        <button type="reset" id="bNetejar">Netejar</button>
+    </p>
+</form>
+</body>
+</html>

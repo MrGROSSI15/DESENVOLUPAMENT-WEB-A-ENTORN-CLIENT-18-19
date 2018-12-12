@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ALUMNES</title>
+</head>
+<script>
+    // window.onload = function () {
+    //     primer.nom : "Marc";
+    //     primer.mostrarNom = function () {
+    //         alert(this.nom);
+    //     }
+    // }
+    window.onload = function () {
+        var alumne = {
+            nom: "Marc",
+            cognom: "Grossi"
+        };
+        function array(data){
+            resultat = "";
+        for (var key in data) {
+            var resultat = data[key];
+        }
+        return resultat;
+        }
+
+        document.getElementById("alumne").innerHTML = "L'alumne nom: " + alumne.nom + " " + alumne.cognom;
+    }
+</script>
+
+<body>
+    <p id="alumne"></p>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>String</title>
+
+        <script type="text/javascript">
+            window.onload = function () {
+                var vLlista = document.getElementById("llista");
+                vLlista.innerHTML = "<li>" + "Google".link("http://www.google.cat") + "</li>";
+                vLlista.innerHTML += "<li>" + "IES Pau Casesnoves".link("http://www.iespaucasesnoves.cat") + "</li>";
+                vLlista.innerHTML += "<li>" + "Aula Virtual".link("https://aulavirtual.iespaucasesnoves.cat") + "</li>";
+                vLlista.innerHTML += "<li>" + "Anar al final".link("#final") + "</li>";
+            };
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            document.write("<h1>" + "String".anchor("inici") + "</h1>");
+        </script>
+        <h2>Enllaços creats amb el wrapper</h2>
+        <ul id="llista"> </ul>
+        <script type="text/javascript">
+            for (var i = 0; i < 30; i++) {
+                document.write("<p>Text per fer lloc</p>");
+            }
+            document.write("<h2>" + "Final".anchor("final") + "</h2>");
+            document.write("<p>" + "Tornar a dalt".link("#inici") + "</p>");
+
+        </script>
+      
+    </body>
+</html>

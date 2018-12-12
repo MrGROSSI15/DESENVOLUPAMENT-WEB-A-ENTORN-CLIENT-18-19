@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crea un fitxer <i>utilitats.js</i> que inclogui funcions per a la suma,
+        resta,
+        multiplicació i divisió de dos números i la potència d'una base elevada a un exponent. Totes les
+        funcions
+        han de tornar el resultat, no han de mostrar res. Crea una pàgina <i>calculadora.html</i> que inclogui
+        aquest fitxer extern i cridi les seves funcions sense interacció amb l'usuari.</title>
+</head>
+<h1>Calculadora</h1>
+
+<body>
+    <script type="text/javascript" src="utilitats.js"></script>
+    <script>
+        num1 = parseInt(prompt("Digues el primer numero: "));
+        num2 = parseInt(prompt("Digues el segon numero: "));
+
+        document.write("<br/>La suma és: " + suma(num1, num2));
+        document.write("<br/>La resta és: " + resta(num1, num2));
+        document.write("<br/>La multipliació és: " + multi(num1, num2));
+        document.write("<br/>La divisió és: " + div(num1, num2));
+        document.write("<br/>La potència és: ")
+    </script>
+    <p><a href="index.html">Torna a l'Index</a></p>
+</body>
+
+</html>

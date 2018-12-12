@@ -1,0 +1,41 @@
+<html>
+
+    <head>
+        <title>Prova trickling</title>
+        <style type="text/css">
+            p {
+                background-color: azure;
+            }
+            div{
+                background-color: blanchedalmond;
+                padding: .5em;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function () {
+                document.getElementById("capa").addEventListener("click",function(){
+                    alert("Capa");
+                    
+                }, true);
+                document.getElementById("hola").addEventListener("click",function(e){
+                    e.stopPropagation();
+                    alert("Hola");
+                }, true);
+                document.getElementById("adeu").addEventListener("click",function(){
+                    alert("adeu");
+                }, true);
+
+            };
+        </script>
+    </head>
+
+    <body>
+        <h1>Prova trickling</h1>
+        <div id="capa">
+            <p id="hola">Hola</p>
+            <p id="adeu">Adeu</p>
+        </div>
+        <p id="multiple">multiple</p>
+    </body>
+
+</html>

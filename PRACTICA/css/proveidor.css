@@ -1,0 +1,24 @@
+.ocult{
+    display:none;
+}
+
+.contacte{
+    float:left;
+}
+
+.avis{
+  /*  float:left;*/
+    display: inline-block;
+    margin: 0 2em;
+    padding: 0.25em 1em;
+
+    color:darkred;
+    border-style: solid;
+    border-width: thin;
+    border-color: darkred;
+    border-radius: 10px;
+}
+label{
+    display: inline-block;
+    padding-right: 1em;
+}

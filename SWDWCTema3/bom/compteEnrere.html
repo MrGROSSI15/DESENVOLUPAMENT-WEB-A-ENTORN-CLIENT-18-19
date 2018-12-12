@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Compte Enrere</title>
+</head>
+
+<body>
+    <p id="temps"> </p>
+</body>
+<script>
+    var segs = 10;
+
+    function contaEnrere() {
+        segs--;
+        if (segs >= 0) {
+            document.getElementById("temps").innerHTML = "Redireccionant rmano: " + segs;
+
+        }
+        if (segs < 0) {
+            window.location = "contingut.html";
+        }
+
+    }
+    var compta = setInterval('contaEnrere()', 1000);
+</script>
+
+</html>

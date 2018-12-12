@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Objectes definits per l'usuari: Aplicació</title>
+        <script type="text/javascript" src="js/aplicacio.js"></script>
+        <script type="text/javascript">
+            var whatsapp;
+
+            function mostraObjecte(objecte) {
+                var cadena = "";
+                cadena = cadena + "<p>Nom: " + objecte.getNom() + "</p>";
+                cadena = cadena + "<p>Tipus: " + objecte.getTipus() + "</p>";
+                cadena = cadena + "<p>Preu: " + objecte.getPreu() + "</p>";
+                cadena = cadena + "<p>Descripció: " + objecte.getDescripcio() + "</p>";
+                cadena = cadena + "<p>Descarregues: " + objecte.getDescarregues() + "</p>";
+                return cadena;
+            }
+
+            function inicialitza() {
+                var whatsapp = new aplicacio("WhatsApp", "Comunicacions",
+                        "Aplicacio per envir missatges gratuitament", 0.5);
+                document.getElementById("original").innerHTML = mostraObjecte(whatsapp);
+
+                var oruxmaps = new aplicacio("OruxMaps", "Geolocalització",
+                        "Aplicacio per enregistrar i seguir rutes", 0.0);
+                document.getElementById("original2").innerHTML = mostraObjecte(oruxmaps);
+                whatsapp.setDescripcio("Aplicació SMS killer");
+                whatsapp.setPreu(2.25);
+                whatsapp.incrementaDescarregues();
+                whatsapp.incrementaDescarregues();
+                whatsapp.incrementaDescarregues();
+
+
+
+                oruxmaps.setDescripcio(oruxmaps.getDescripcio() + " ofline: Senderisme, bicileta, ...");
+                oruxmaps.setPreu(3.30);
+                oruxmaps.canviaComentari("Collonuda");
+                oruxmaps.incrementaDescarregues();
+                oruxmaps.incrementaDescarregues();
+                oruxmaps.incrementaDescarregues();
+                oruxmaps.incrementaDescarregues();
+                oruxmaps.incrementaDescarregues();
+                document.getElementById("modificat").innerHTML = mostraObjecte(whatsapp);
+                document.getElementById("modificat2").innerHTML = mostraObjecte(oruxmaps);
+
+                for (m in oruxmaps) {
+                    document.getElementById("modificat2").innerHTML += m + "<br/> ";
+                }
+
+                aplicacio.prototype.executaDesbarat = function () {
+                    alert("Funció executaDesbarat");
+                };
+                oruxmaps.executaDesbarat();
+                whatsapp.executaDesbarat();
+            }
+
+            window.onload = inicialitza;
+        </script>
+        <style type="text/css">
+            .contenidor {
+                float: left;
+                width: 41%;
+                background: #ddd;
+                margin:2%;
+                padding:2%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Objectes definits per l'usuari: Aplicació</h1>
+        <div class="contenidor">
+            <h2>Creació d'un objecte aplicació</h2>
+            <div id="original"></div>
+        </div>
+        <div class="contenidor">
+            <h2>Modificació de l'objecte</h2>
+            <div id="modificat"></div>
+        </div>
+        <div class="contenidor">
+            <h2>Creació d'un objecte aplicació 2</h2>
+            <div id="original2"></div>
+        </div>
+        <div class="contenidor">
+            <h2>Modificació de l'objecte 2</h2>
+            <div id="modificat2"></div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Date</title>
+        <script>
+
+            function edat(neixement) {
+                var avui = new Date();
+                var dif = avui.getFullYear() - neixement.getFullYear();
+                if ((neixement.getMonth() > avui.getMonth()) || ((neixement.getMonth() === avui.getMonth()) && (avui.getDate() < neixement.getDate()))) {
+                    dif--;
+                }
+                return dif;
+            }
+
+            window.onload = function () {
+                //Exercici 1
+                var data = new Date("05/11/2012");
+                document.getElementById("Exercici1").innerHTML = data.getDate() + "/" + data.getMonth() + "/" + data.getFullYear();
+
+                //Exercici 2
+                var any = 2016;
+                var mes = 9; //octubre
+                var dia = 29;
+                var hores = 19;
+                var minuts = 0;
+                var segons = 0;
+                var data2 = new Date(any, mes, dia, hores, minuts, segons);
+                document.getElementById("Exercici2").innerHTML = data2.toLocaleDateString() + " " + data2.toLocaleTimeString();
+                //Exercici 3
+                document.getElementById("Exercici3").innerHTML = data2.getDate() + "/" + data2.getMonth() + "/" + data2.getFullYear() + " " + data2.getHours() + ":" + data2.getMinutes() + ":" + data2.getSeconds();
+                //Exercici 4
+                document.getElementById("Exercici4").innerHTML = (data2.getDay() === 6 || data2.getDay() === 0 ? "Cap de setmana :)" : "Dia feiner :(");
+                //Exercici 5
+                var data3 = new Date("12/31/2016");
+                var inici = new Date(data3.getFullYear(), 0, 1);
+                var dif = data3 - inici;
+                var dies = Math.ceil(dif / (1000 * 60 * 60 * 24));
+                document.getElementById("Exercici5").innerHTML = "<p>" + dies + "</p>";
+
+                //Exercici 6
+                var naixement=new Date(2013, 3, 7);
+                document.getElementById("Exercici6").innerHTML = "<p>Data de neixement: "+naixement.toLocaleDateString()+" Edat: " + edat(naixement) + "</p>";
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Date</h1>
+        <h2>Date a partir d'una cadena(format americà)</h2>
+        <p id="Exercici1"></p>
+
+        <h2>Crea un objecte date a partir de les dades any, mes, dia,
+            hores, minuts, segons</h2>
+        <p id="Exercici2"></p>
+        <h2>De l'objecte Date creat a l'exercici anterior, recupera tots els seus elements: any, mes, data, ...</h2>
+        <p id="Exercici3"></p>
+        <h2>Escriu una funció que ens digui si una data determinada cau en cap de setmana (dissabte o diumenge).</h2>
+        <p id="Exercici4"></p>
+        <h2> Escriu una funció Javascript que ens digui quans dies han passat des de l'inici de l'any fins una data donada del mateix any.</h2>
+        <p id="Exercici5"></p>
+        <h2> Programa una funció que torni l'edat d'una persona a partir de la seva data de naixement.</h2>
+        <p id="Exercici6"></p>
+    </body>
+</html>
