@@ -59,4 +59,8 @@ window.onload = function () {
     }
     document.getElementById("bSubmit").onsubmit = validar;
 
+    document.getElementById("aTNom").required = true;
+    document.getElementById("aTTelefon").required = true;
+    document.getElementById("aSTipus").required = true;
+
 }
