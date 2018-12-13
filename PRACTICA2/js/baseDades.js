@@ -1,4 +1,3 @@
-
 function baseDades() {
     var dades = [
         {nom: "Luke Skywalker", tipus: "rebuda", data: "2015-12-11", telefon: "666777888", hora: "12:58", durada: 125},
