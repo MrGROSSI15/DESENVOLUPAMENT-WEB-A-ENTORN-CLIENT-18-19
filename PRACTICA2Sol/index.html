@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registre de trucades</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/estils.css">
+        <script type="text/javascript" src="js/utilitats.js"></script>
+        <script type="text/javascript" src="js/baseDades.js"></script>
+        <script type="text/javascript" src="js/registre.js"></script>
+    </head>
+    <body>
+        <div class="contenidor">
+            <div class="capçalera"></div>
+            <h1>Registre de trucades</h1>
+            <div id="dMenu">
+                <ul class="menu">
+                    <li id='liAfegir'>Afegir trucada</li>
+                    <li id='liConsulta'> Consulta registre</li>
+                    <li id='liAltres'>Altres</li>
+                </ul>
+            </div>
+            <div id="dContingut">
+                <div id="dAlta">
+                    <form id="fAlta">
+                        <fieldset>
+                            <legend>Nova trucada</legend>
+                            <p><label>Nom: </label><input type="text" id="aTNom" name="nom" value="Padmé Amidala"></p>
+                            <p><label>Telefon: </label><input type="text" id="aTTelefon" name="nom" value="633255411"></p>
+                            <p><label>Tipus: </label><select id="aSTipus" name="tipus">
+                                    <option value="Qualsevol">Qualsevol tipus</option>
+                                    <option value="feta">Feta</option>
+                                    <option value="rebuda" selected>Rebuda</option>
+                                    <option value="perduda">Perduda</option>
+                                </select>
+                            </p>
+                            <p><label>Data: </label><input type="date" id="aTData" name="data" value="2015-12-18"> <span class="ajuda">Format aaa-mm-dd</span></p>
+                            <p><label>Hora: </label><input type="time" id="aTHora" name="data" value="14:35"> <span class="ajuda">Format hh:mm</span></p>
+                            <p><label>Durada: </label><input type="Number" id="aTDurada" name="durada" value="62"></p>
+                            <p><button type="submit" id="bSubmit">Alta</button></p>
+                        </fieldset>
+                    </form>
+                </div>
+                <div id="dConsulta">
+                    <form id="formulari">
+                        <fieldset>
+                            <legend>Filtre per nom</legend>
+                            <p>
+                                <label>Nom: </label>
+                                <select id="sNom" name="nom">
+
+                                </select>
+                            </p>
+                            <!--   <button id="bFiltre" type="button">Filtra</button></p>-->
+                        </fieldset>
+                    </form>
+                    <div id="dLlista">
+                        <table>
+                            <thead>
+                                <tr><th>Tipus</th><th>Data</th><th>Hora</th><th>Durada</th></tr>
+                            </thead>
+                            <tfoot><td id="total" colspan="3">Nombre trucades: </td><td id="durada"></td></tfoot>
+                            <tbody id="tCos">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="dAltres"><p>Per fer</p></div>
+            </div>
+        </div>
+    </body>
+</html>

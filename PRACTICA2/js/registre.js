@@ -1,8 +1,11 @@
 window.onload = function () {
+// Inicialització
+// Ha de crear un objecte base de dades que serà el que utilitzarem a tots els scripts de la pàgina.
+    bbdd = new baseDades();
+    // Inicialment les tres capes ("dAlta", "dConsulta", "dAltres") es veuen. Ocultau-les totes tres. Programau els li del menú de manera que en pitjar-los mostrin el div que toca i amaguin els altres.
     document.getElementById("dAlta").className = "ocult";
     document.getElementById("dConsulta").className = "ocult";
     document.getElementById("dAltres").className = "ocult";
-    bbdd = new baseDades();
 
     document.getElementById("liAfegir").onclick = function () {
         // document.getElementById("aTNom").required = true;
@@ -25,7 +28,7 @@ window.onload = function () {
         document.getElementById("dConsulta").className = "ocult";
         document.getElementById("dAltres").className = "info";
     }
-
+    // Afegir trucada
     document.getElementById("fAlta").onsubmit = function (e) {
         var error = false;
 
@@ -76,6 +79,14 @@ window.onload = function () {
 
         }
         e.preventDefault(); //evitar que s'envii el formulari
+
+        //	Consulta de trucades per nom
+
+        // En mostrar el div ha de carregar el select amb els noms de la base de dades. Utilitza la funció tornaNoms(). 
+        // El valor de l'opció ha de ser el nom que hem rebut, que també és el que ha de mostrar. Hi ha d'haver l'opció
+        //  Ningú seleccionada per defecte.
+        var noms = JSON.parse(bbdd.tornaNoms());
+
 
     }
 }
