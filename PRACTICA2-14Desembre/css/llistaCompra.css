@@ -1,0 +1,27 @@
+div > img {
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin-right: 2em;
+}
+
+div {
+    display: block;
+}
+
+span {
+    display: inline-block;
+    margin-right: 2em;
+}
+
+p.clear {
+    clear: left;
+}
+
+.item {
+    margin: 1em 0;
+    padding: 1em 1em;
+    border: 1px #3a3b44 solid;
+    border-radius: 10px;
+    overflow:auto;
+}

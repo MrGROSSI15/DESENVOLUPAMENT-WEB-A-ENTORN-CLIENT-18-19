@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>De</title>
+    <script src="js/incidenciesServer.js"></script>
+    <script src="js/detallIncidencia.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/detallIncidencia.css">
+</head>
+<body>
+<h1>Detall d'incidències</h1>
+<div class="mostrador">
+    <h2>Selecció</h2>
+    <p><label for="tria">Seleccioni una incidència: </label><select id="tria"></select></p>
+</div>
+<div class="mostrador">
+    <h2>Dades de la incidència</h2>
+    <p><label for="id">Identificador: </label><input type="text" id="id" name="id" readonly="readonly" size="5"></p>
+    <p><label for="lloc">Lloc: </label><input type="text" id="lloc" name="lloc" readonly="readonly"></p>
+    <p><label for="dataCom">Data de comunicació: </label><input type="date" id="dataCom" name="dataCom"
+                                                                readonly="readonly">
+    </p>
+    <p><label for="prioritat">Prioritat: </label><input type="text" id="prioritat" name="prioritat" readonly="readonly" size="3" min="1" max="10">
+    </p>
+    <p><label>Estat: </label> <input type="text" id="estat" name="estat" readonly="readonly" size="10"></p>
+        <!-- <input type="radio" id="oberta" name="estat" readonly="readonly"> Oberta <input
+            type="radio"
+            id="tancada"
+            name="estat"
+            readonly="readonly">
+        Tancada</p> -->
+    <p><label for="descripcio">Descripcio: </label><textarea id="descripcio" name="descripcio"
+                                                             readonly="readonly"></textarea></p>
+    <p><label for="dataTancament">Data tancament: </label><input type="date" id="dataTancament" name="dataTancament"
+                                                                 readonly="readonly"></p>
+</div>
+<div class="mostrador">
+    <h2>Actuacions</h2>
+    <div id="dTaula" class="ocult">
+        <table>
+            <thead>
+            <th>Ordre</th>
+            <th>Descripció</th>
+            </thead>
+            <tbody id="cos"></tbody>
+        </table>
+    </div>
+    <div id="dAvis" class="ocult"><p>No hi ha actuacions per a aquesta indidència.</p></div>
+</div>
+</body>
+</html>
