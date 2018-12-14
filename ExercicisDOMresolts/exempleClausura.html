@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exemples clausura</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico"> 
+
+        <style type="text/css">
+            .ocult{
+                display:none;
+            }
+
+        </style>
+          <!-- <script>
+               window.onload = function () {
+                   var primer = document.getElementById("bPrimer");
+                   primer.onclick = function () {
+                       primer.className = "ocult";
+                   }
+   
+                   for (var i = 1; i <= 10; i++) {
+                       var p = document.createElement("p");
+                       var boto = document.createElement("button");
+                       var text = document.createTextNode("Botó " + i);
+                       boto.appendChild(text);
+                       boto.onclick = function (e) {
+                           this.className = "ocult";
+                       };
+                       p.appendChild(boto);
+                       document.getElementById("dMostrador").appendChild(p);
+                   }
+               };
+           </script>-->
+           <script>
+            function creaBoto(i) {
+                var p = document.createElement("p");
+                var boto = document.createElement("button");
+                var text = document.createTextNode("Botó " + i);
+                boto.appendChild(text);
+                boto.onclick = function (e) {
+                    boto.className = "ocult";
+                };
+                p.appendChild(boto);
+                document.getElementById("dMostrador").appendChild(p);
+            }
+
+            window.onload = function () {
+                var primer = document.getElementById("bPrimer");
+                primer.onclick = function () {
+                    primer.className = "ocult";
+                }
+
+                for (var i = 1; i <= 10; i++) {
+                    creaBoto(i);
+                }
+            };
+        </script>
+       <!-- <script>
+            function makeFunc() {
+                var name = "closure";
+                function displayName() {
+                    alert(name);
+                }
+                return displayName;
+            }
+
+            var myFunc = makeFunc();
+            myFunc();
+    </script>-->
+    </head>
+    <body>
+        <h1>Exemples clausura</h1>
+        <p><button type="button" id="bPrimer">Primer</button></p>
+        <div id="dMostrador"></div>
+    </body>
+</html>

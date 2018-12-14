@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico"> 
+
+        <style type="text/css">
+            label{
+                display: inline-block;
+                width: 5em;
+            }
+        </style>
+        <script type="text/javascript">
+
+            function rbCanvia(pId) {
+                if (pId == "rbTar") {
+                    document.getElementById("dTrans").style.display = "none";
+                    document.getElementById("dTar").style.display = "block";
+                } else {
+                    document.getElementById("dTrans").style.display = "block";
+                    document.getElementById("dTar").style.display = "none";
+                }
+
+            }
+            window.onload = function () {
+                document.getElementById("rbTrans").onchange = function () {
+                    rbCanvia("rbTrans");
+                };
+                document.getElementById("rbTar").onchange = function () {
+                    rbCanvia("rbTar");
+                };
+                document.getElementById("dTrans").style.display = "none";
+                document.getElementById("dTar").style.display = "none";
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Pagament</h1>
+        <form>
+            <fieldset>
+                <legend>Dades personals</legend>
+                <p><label>Nom:</label><input type="text" name="tNom" id="tNom"/></p>
+                <p><label>Llinatges:</label><input type="text" name="tLlinatges" id="tLlinatges"/></p>            
+                <p><label>DNI:</label><input type="text" name="tDNI" id="tDNI"/></p>
+                <p><label>email:</label><input type="text" name="tEmail" id="tEmail"/></p>
+            </fieldset>
+            <fieldset>
+                <legend>Forma de pagament</legend>
+                <p><input type="radio" name="rPagament" value="tar" id="rbTar"/> Targeta de credit <input type="radio"  name="rPagament" value="trans" id="rbTrans" /> Transferència</p>
+                <div id="dTar">
+                    <p><label for="nTar">Nombre targeta: </label><input type="text" name="nTar" id="nTar"></p><p><label for="cadTar">Caducitat: </label><input type="text" name="cadTar" id="cadTar"></p><p><label for="cvsTar">Codi CVS: </label><input type="text" name="cvsTar" id="cvsTar"></p>
+                </div>
+                <div id="dTrans"><p>El número de compte al que ha de fer la transferència és el <strong>2100-0165-12-1002547894</strong>.</p><p>En rebre la confirmació de la seva transferència li enviarem un correu electrònic a l'adreça indicada.</p></div>
+            </fieldset>
+            <p><button type="submit">Enviar</button> <button type="reset">Netejar formulari</button></p>
+        </form>
+    </body>
+</html>

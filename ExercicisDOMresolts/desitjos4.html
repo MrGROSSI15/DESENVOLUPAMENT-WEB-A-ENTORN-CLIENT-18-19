@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Desitjos</title>
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico"> 
+
+        <style type="text/css">
+            .llistad {
+                float: left;
+                width: 30%;
+                margin: 2%;
+                padding: 1%;
+                border: 1px solid black;
+            }
+        </style>
+        <script type="text/javascript" src="js/desitjos4.js"></script>
+    </head>
+    <body>
+        <h1>Llista de desitjos</h1>
+        <form>
+            <p>
+                <label for="nou">Nou desig: </label><input type="text" name="nou"
+                                                           id="nou">
+            </p>
+            <p>
+                <button type="button" id="boto">Afegir</button>
+            </p>
+        </form>
+        <div class="llistad">
+            <h2>Desitjos demanats</h2>
+            <ul id="llista">
+            </ul>
+        </div>
+        <div class="llistad">
+            <h2>Desitjos complits</h2>
+            <ul id="llistaC">
+            </ul>
+        </div>
+    </body>
+</html>

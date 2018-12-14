@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico"> 
+
+        <style type="text/css">
+            label{
+                display: inline-block;
+                width: 5em;
+            }
+        </style>
+        <script type="text/javascript">
+
+            function rbCanvia(pId) {
+
+                function crearInput(pLabel, pName) {
+                    var paragraf = document.createElement("p");
+                    var lab = document.createElement("label");
+                    var tLab = document.createTextNode(pLabel);
+                    lab.setAttribute("for", pName);
+                    lab.appendChild(tLab);
+
+                    paragraf.appendChild(lab);
+
+                    var nTar = document.createElement("input");
+                    nTar.setAttribute("type", "text");
+                    nTar.setAttribute("name", pName);
+                    nTar.setAttribute("id", pName);
+                    paragraf.appendChild(nTar);
+                    capa.appendChild(paragraf);
+                }
+
+                var capa = document.getElementById("dPagament");
+                //Elimina tots els elements de dins la capa.
+                while (capa.lastChild) {
+                    capa.removeChild(capa.lastChild);
+                }
+
+                if (pId == "rbTar") {
+                    crearInput("Nombre targeta: ", "nTar");
+                    crearInput("Caducitat: ", "cadTar");
+                    crearInput("Codi CVS: ", "cvsTar");
+                } else {
+                    var paragraf = document.createElement("p");
+                    var tPar = document.createTextNode("El número de compte al que ha de fer la transferència és el ");
+                    paragraf.appendChild(tPar);
+                    var strong = document.createElement("strong");
+                    var tStrong = document.createTextNode("2100-0165-12-1002547894");
+                    var tPunt = document.createTextNode(".");
+                    strong.appendChild(tStrong);
+                    paragraf.appendChild(strong);
+                    paragraf.appendChild(tPunt);
+                    capa.appendChild(paragraf);
+                    paragraf = document.createElement("p");
+                    tPar = document.createTextNode("En rebre la confirmació de la seva transferència li enviarem un correu electrònic a l'adreça indicada.");
+                    paragraf.appendChild(tPar);
+                    capa.appendChild(paragraf);
+                }
+
+            }
+            window.onload = function () {
+                document.getElementById("rbTrans").onchange = function () {
+                    rbCanvia("rbTrans");
+                };
+                document.getElementById("rbTar").onchange = function () {
+                    rbCanvia("rbTar");
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Pagament</h1>
+        <form>
+            <fieldset>
+                <legend>Dades personals</legend>
+                <p><label>Nom:</label><input type="text" name="tNom" id="tNom"/></p>
+                <p><label>Llinatges:</label><input type="text" name="tLlinatges" id="tLlinatges"/></p>            
+                <p><label>DNI:</label><input type="text" name="tDNI" id="tDNI"/></p>
+                <p><label>email:</label><input type="text" name="tEmail" id="tEmail"/></p>
+            </fieldset>
+            <fieldset>
+                <legend>Forma de pagament</legend>
+                <p><input type="radio" name="rPagament" value="tar" id="rbTar"/> Targeta de credit <input type="radio"  name="rPagament" value="trans" id="rbTrans" /> Transferència</p>
+                <div id="dPagament"></div>
+            </fieldset>
+            <p><button type="submit">Enviar</button> <button type="reset">Netejar formulari</button></p>
+        </form>
+    </body>
+</html>

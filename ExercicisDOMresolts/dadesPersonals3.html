@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Mostruari</title>
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico"> 
+
+            <style type="text/css">
+                .obligatori:before { 
+                    content: "*";
+                    color:red;
+                }
+            </style>
+            <script type="text/javascript" src="js/utilitats.js"></script>
+            <script type="text/javascript">
+                window.onload = function () {
+                    document.getElementById("formulari").onsubmit = validar;
+
+                    document.getElementById("formulari").onreset = function () {
+                        return confirm("Està segur de netejar el formulari?");
+                    };
+
+                    document.getElementById("illa").onchange = canviarLocalitats;
+
+                    document.getElementById("nom").value = "Jo";
+                    document.getElementById("llinatges").value = "Mateix";
+                    document.getElementById("nom").focus();
+                }
+
+                function canviarLocalitats() {
+                    var illaValue = parseInt(document.getElementById("illa").value);
+                    var poblacions;
+                    switch (illaValue) {
+                        case 1:
+                        {
+                            poblacions = '<option value="Arta">Artà</option><option value="Andratx">Andratx</option>';
+                            break;
+                        }
+                        case 2:
+                        {
+                            poblacions = '<option value="Ciutadella">Ciutadella</option><option value="Mao">Maó</option>';
+                            break;
+                        }
+                        case 3:
+                        {
+                            poblacions = '<option value="Josep">Sant Josep</option><option value="Joan">Sant Joan</option>';
+                            break;
+                        }
+                        case 4:
+                        {
+                            poblacions = '<option value="Josep">Sant Francesc</option><option value="Calo">Es Caló</option>';
+                            break;
+                        }
+                    }
+                    document.getElementById("pobles").innerHTML = poblacions;
+                }
+
+                function validar() {
+                    var cadena = "Errors al formulari:\n";
+                    var resultat = true;
+                    var objecte;
+
+                    function errada(error, string) {
+                        if (error) {
+                            resultat = false;
+                            cadena = cadena + string;
+                            objecte.style.backgroundColor = "#f00";
+                        } else {
+                            objecte.style.backgroundColor = "#fff";
+                        }
+                    }
+
+                    objecte = document.getElementById("nom");
+                    //Dades bàsiques
+                    if (!validarObligatori(objecte.value)) {
+                        errada(true, "- nom no pot ser buid\n");
+                    } else {
+                        errada(false);
+                    }
+
+                    objecte = document.getElementById("llinatges");
+                    if (!validarObligatori(objecte.value)) {
+                        errada(true, "- llinatges no pot ser buid\n");
+                    } else {
+                        errada(false);
+                    }
+
+                    objecte = document.getElementById("tel1");
+                    if (!validarTelefon(objecte.value, true)
+                            && !validarTelefon(objecte.value, false)) {
+                        errada(true, "- telefon 1 ha de contenir un nombre de telefon vàlid\n");
+                    } else {
+                        errada(false);
+                    }
+                    //Altres dades
+                    objecte = document.getElementById("tel2");
+                    if (validarObligatori(objecte.value)) { //Si hi ha informació
+                        if (!validarTelefon(objecte.value, true)
+                                && !validarTelefon(objecte.value, false)) {
+                            errada(true, "- telefon 2 ha de contenir un nombre de telefon vàlid\n");
+                        } else {
+                            errada(false);
+                        }
+                    } else {
+                        errada(false);
+                    }
+
+                    objecte = document.getElementById("dataNeixement");
+                    if (validarObligatori(objecte.value)) { //Si hi ha informació
+                        if (!validarData(objecte.value)) {
+                            errada(true, "- Data neixement ha de contenir un valor vàlid\n");
+                        } else {
+                            errada(false);
+                        }
+                    } else {
+                        errada(false);
+                    }
+
+                    if (resultat) {
+                        cadena = 'OK';
+                    }
+                    alert(cadena);
+                    return resultat;
+                }
+            </script>
+    </head>
+    <body>
+        <h1>Mostruari</h1>
+        <form action="mostruari.html" method="get" id="formulari">
+            <fieldset>
+                <legend>Dades bàsiques</legend>
+                <p>
+                    <label for="nom" class="obligatori">Nom:</label><input type="text" name="nom" id="nom" class="obligatori"></input>
+                </p>
+                <p>
+                    <label for="llinatges">Llinatges:</label><input type="text"
+                                                                    name="llinatges" id="llinatges" class="obligatori"></input>
+                </p>
+
+                <p>
+                    <label for="tel1">Telèfon 1:</label><input type="text" name="tel1"
+                                                               id="tel1" class="obligatori"></input>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Altres dades</legend>
+                <p>
+                    <label for="tel2">Telèfon 2:<input type="text" name="tel2"
+                                                       id="tel2"></input>
+                </p>
+
+                <p>
+                    <label for="email">Email:<input type="text" name="email"
+                                                    id="email"></input>
+                </p>
+
+                <p>
+                    <label for="dataNeixement">Data neixement:<input type="text"
+                                                                     name="dataNeixement" id="dataNeixement"></input>
+                </p>
+                <p>
+                    Sexe:<input type="radio" name="sexe" id="Home" value="Home">Home</input>
+                    <input type="radio" name="sexe" id="Dona" value="Dona">Dona</input>
+                </p>
+                <p>
+                    <label>Illa: </label> <select name="illa" id="illa">
+                        <option value="1">Mallorca</option>
+                        <option value="2">Menorca</option>
+                        <option value="3">Eivissa</option>
+                        <option value="4">Formentera</option>
+                    </select>
+                </p>
+                <p>
+                    <labelfor="pobles">Localitat: </label> <select name="pobles"
+                                                                   id="pobles">
+                            <option value="Arta">Artà</option>
+                            <option value="Andratx">Andratx</option>
+                        </select>
+                </p>
+                <p>
+                    <label for="carrer">Carrer:</label><input type="text" name="carrer"
+                                                              id="carrer"></input>
+                </p>
+                <p>
+                    <label for="cp">Codi Postal:<input type="text" name="cp"
+                                                       id="cp"></input>
+                </p>
+
+                <p>
+                    <textarea name="descripcio" id="descripcio" rows="2" cols="20"></textarea>
+                </p>
+
+
+            </fieldset>
+
+            <input type="submit" name="bEnviar" id="bEnviar" value="Enviar"></input>
+            <input type="reset" name="bNeteja" id="bNeteja" value="Netejar"></input>
+        </form>
+
+    </body>
+</html>

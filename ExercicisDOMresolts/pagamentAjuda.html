@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico"> 
+
+        <style type="text/css">
+            label{
+                display: inline-block;
+                width: 5em;
+            }
+            .ocult{
+                display:none;
+            }
+            .vistable{
+                dispaly:block;
+            }
+            .divPagament{
+                background-color: #bbb;
+                padding:0.5em;
+            }
+            .ajuda{
+                float:right;
+                width:25%;
+                background-color: #ddd;
+                padding:1em;
+            }
+        </style>
+        <script type="text/javascript">
+
+            function rbCanvia(pId) {
+                if (pId == "rbTar") {
+                    document.getElementById("dTrans").className = document.getElementById("dTrans").className.replace("vistable", "ocult");
+                    document.getElementById("dTar").className = document.getElementById("dTar").className.replace("ocult", "vistable");
+                } else {
+                    document.getElementById("dTrans").className = document.getElementById("dTrans").className.replace("ocult", "vistable");
+                    document.getElementById("dTar").className = document.getElementById("dTar").className.replace("vistable", "ocult");
+                }
+
+            }
+
+            function amagaAjuda() {
+                var capa = document.getElementById("dAjuda");
+                capa.removeChild(capa.lastChild);
+            }
+
+            function mostraAjuda(pId) {
+                var capa = document.getElementById("dAjuda");
+                var s = document.getElementById(pId).getAttribute("title");
+                var text = document.createTextNode(s);
+                capa.appendChild(text);
+            }
+
+            window.onload = function () {
+                document.getElementById("rbTrans").onchange = function () {
+                    rbCanvia("rbTrans");
+                };
+                document.getElementById("rbTar").onchange = function () {
+                    rbCanvia("rbTar");
+                };
+
+                document.getElementById("tNom").onfocus = function () {
+                    mostraAjuda("tNom");
+                };
+                document.getElementById("tNom").onblur = amagaAjuda;
+
+                document.getElementById("tLlinatges").onfocus = function () {
+                    mostraAjuda("tLlinatges");
+                };
+                document.getElementById("tLlinatges").onblur = amagaAjuda;
+
+                document.getElementById("tDNI").onfocus = function () {
+                    mostraAjuda("tDNI");
+                };
+                document.getElementById("tDNI").onblur = amagaAjuda;
+
+                document.getElementById("tEmail").onfocus = function () {
+                    mostraAjuda("tEmail");
+                };
+                document.getElementById("tEmail").onblur = amagaAjuda;
+
+                document.getElementById("nTar").onfocus = function () {
+                    mostraAjuda("nTar");
+                };
+                document.getElementById("nTar").onblur = amagaAjuda;
+
+
+                document.getElementById("cadTar").onfocus = function () {
+                    mostraAjuda("cadTar");
+                };
+                document.getElementById("cadTar").onblur = amagaAjuda;
+
+                document.getElementById("cvsTar").onfocus = function () {
+                    mostraAjuda("cvsTar");
+                };
+                document.getElementById("cvsTar").onblur = amagaAjuda;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Pagament</h1>
+        <div class="ajuda" id="dAjuda"><h1>Ajuda</h1></div>
+        <form>
+            <fieldset>
+                <legend>Dades personals</legend>
+                <p><label>Nom:</label><input type="text" name="tNom" id="tNom" title="Nom de pila del comprador."/></p>
+                <p><label>Llinatges:</label><input type="text" name="tLlinatges" id="tLlinatges" title="Llinatges complets del comprador."/></p>            
+                <p><label>DNI:</label><input type="text" name="tDNI" id="tDNI" title="DNI o NIE del comprador, sense separar la lletra dels números ni amb guió ni amb espais en blanc."/></p>
+                <p><label>email:</label><input type="text" name="tEmail" id="tEmail" title="Adreça de correu electrònic del comprador. Asseguri's que es correcta per que en ella rebra informació sobre la seva compra."/></p>
+            </fieldset>
+            <fieldset>
+                <legend>Forma de pagament</legend>
+                <p><input type="radio" name="rPagament" value="tar" id="rbTar"/> Targeta de credit <input type="radio"  name="rPagament" value="trans" id="rbTrans" /> Transferència</p>
+                <div id="dTar" class="divPagament ocult">
+                    <p><label for="nTar">Nombre targeta: </label><input type="text" name="nTar" id="nTar" title="Nombre de la targeta, de 20 xifres."></p>
+                    <p><label for="cadTar">Caducitat: </label><input type="text" name="cadTar" id="cadTar" title="Caducitat de la targeta, en format mm/aa"></p>
+                    <p><label for="cvsTar">Codi CVS: </label><input type="text" name="cvsTar" id="cvsTar" title="Codi de seguretat de tres xifres de la targeta. Sol estar a la part posterior a sobre de l'espai reservat per a la seva signatura."></p>
+                </div>
+                <div id="dTrans" class="divPagament ocult">
+                    <p>El número de compte al que ha de fer la transferència és el <strong>2100-0165-12-1002547894</strong>.</p>
+                    <p>En rebre la confirmació de la seva transferència li enviarem un correu electrònic a l'adreça indicada.</p>
+                </div>
+            </fieldset>
+            <p><button type="submit">Enviar</button> <button type="reset">Netejar formulari</button></p>
+        </form>
+    </body>
+</html>
