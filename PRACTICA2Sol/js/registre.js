@@ -150,6 +150,7 @@ window.onload = function () {
         document.getElementById("total").appendChild(vTotal);
         var eDurada = document.createTextNode(formataSegons(totalDurada));
         document.getElementById("durada").appendChild(eDurada);
+        
     };
 
 };

@@ -85,7 +85,57 @@ window.onload = function () {
         // En mostrar el div ha de carregar el select amb els noms de la base de dades. Utilitza la funció tornaNoms(). 
         // El valor de l'opció ha de ser el nom que hem rebut, que també és el que ha de mostrar. Hi ha d'haver l'opció
         //  Ningú seleccionada per defecte.
-        var noms = JSON.parse(bbdd.tornaNoms());
+        function mostraDiv(ident) {
+            var capes = ["dAlta", "dConsulta", "dAltres"];
+            for (var index in capes) {
+                document.getElementById(capes[index]).className = "ocult";
+            }
+            if (validarObligatori(ident)) {
+                document.getElementById(ident).removeAttribute("class");
+            }
+        }
+        
+        function consulta() {
+            mostraDiv("dConsulta");
+            //alert(dades.tornaNoms());
+            var noms = JSON.parse(dades.tornaNoms());
+        
+            var llista = document.getElementById("sNom");
+            while (llista.lastChild) {
+                llista.removeChild(llista.lastChild);
+            }
+            noms.unshift("Ningú");
+            for (var index in noms) {
+                var opcio = document.createElement("option");
+                opcio.setAttribute("value", noms[index]);
+                var texte = document.createTextNode(noms[index]);
+                opcio.appendChild(texte);
+                llista.appendChild(opcio);
+            }
+        
+        }
+        function alta() {
+            mostraDiv("dAlta");
+        }
+        function consulta() {
+            mostraDiv("dConsulta");
+            //alert(dades.tornaNoms());
+            var noms = JSON.parse(dades.tornaNoms());
+        
+            var llista = document.getElementById("sNom");
+            while (llista.lastChild) {
+                llista.removeChild(llista.lastChild);
+            }
+            noms.unshift("Ningú");
+            for (var index in noms) {
+                var opcio = document.createElement("option");
+                opcio.setAttribute("value", noms[index]);
+                var texte = document.createTextNode(noms[index]);
+                opcio.appendChild(texte);
+                llista.appendChild(opcio);
+            }
+        
+        }
 
 
     }
