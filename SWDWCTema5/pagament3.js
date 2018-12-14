@@ -5,7 +5,9 @@ window.onload = function () {
         while (node.firstChild){
             node.removeChild(node.firstChild);
         }
-        document.getElementById("targ").removeAttribute("type");
+        document.getElementById("targ").onclick = function(){
+            document.getElementById("divp").className = "vistable";
+        }
         // var div = document.getElementById("divp");
         // var tar = document.createElement("h5");
         // var texth = document.createTextNode("Pagament per tarjeta");
